@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Livret d'Accueil — Section Apicole GDS France</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;600;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --violet: #A12885;
+    --vert: #56AE31;
+    --bleu: #007BC3;
+    --gris-logo: #7a7a7a;
+    --violet-light: #f5e8f1;
+    --vert-light: #eaf6e3;
+    --bleu-light: #e0f0fb;
+    --gris: #f4f4f4;
+    --texte: #2c2c2c;
+    --blanc: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Source Sans 3', sans-serif; color: var(--texte); background: #fff; }
+
+  /* ── NAVIGATION ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: #fff; box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    display: flex; align-items: center; padding: 0 2rem; height: 68px; gap: 1.5rem;
+  }
+  nav .logo-img { height: 52px; width: 52px; object-fit: contain; }
+  nav .logo-text { font-family: 'Source Sans 3', sans-serif; font-size: 1.3rem; font-weight: 900; color: var(--texte); letter-spacing: -0.02em; }
+  nav .logo-text span { color: var(--bleu); }
+  nav .logo-tagline { font-size: 0.7rem; color: var(--violet); font-style: italic; font-weight: 400; display: block; }
+  nav ul { display: flex; gap: 0; list-style: none; flex-wrap: wrap; margin-left: auto; }
+  nav ul li a { padding: 0.4rem 0.85rem; font-size: 0.76rem; font-weight: 700; color: var(--texte); text-decoration: none; border-radius: 20px; transition: all 0.2s; text-transform: uppercase; letter-spacing: 0.04em; }
+  nav ul li a:hover { background: var(--violet); color: #fff; }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
+    background: linear-gradient(135deg, #1a0d18 0%, #2d1242 40%, #0a3d6b 100%);
+    position: relative; overflow: hidden; padding-top: 68px;
+  }
+  .cover::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23A12885' fill-opacity='0.06'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .cover-hex { position: absolute; right: -60px; top: 50%; transform: translateY(-50%); width: 560px; height: 560px; opacity: 0.07; }
+  .cover-content { position: relative; z-index: 2; padding: 4rem 6rem; max-width: 860px; }
+  .cover-logo { display: flex; align-items: center; gap: 1rem; margin-bottom: 2.5rem; }
+  .cover-logo img { height: 72px; width: 72px; object-fit: contain; }
+  .cover-logo-text .name { font-size: 2rem; font-weight: 900; color: #fff; letter-spacing: -0.02em; }
+  .cover-logo-text .name span { color: #56AE31; }
+  .cover-logo-text .tag { font-size: 0.85rem; color: rgba(255,255,255,0.55); font-style: italic; }
+  .cover-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--vert); color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1.5rem; }
+  .cover h1 { font-family: 'Playfair Display', serif; font-size: 4rem; font-weight: 900; color: #fff; line-height: 1.08; margin-bottom: 1rem; }
+  .cover h1 span { color: var(--violet); display: block; }
+  .cover .subtitle { font-size: 1.1rem; color: rgba(255,255,255,0.7); margin-bottom: 2.5rem; font-weight: 300; max-width: 500px; line-height: 1.7; }
+  .cover-pills { display: flex; gap: 10px; flex-wrap: wrap; }
+  .cover-pills span { padding: 7px 18px; border: 1.5px solid rgba(255,255,255,0.25); border-radius: 30px; color: rgba(255,255,255,0.8); font-size: 0.82rem; font-weight: 600; }
+  .cover-bottom { position: absolute; bottom: 0; left: 0; right: 0; background: var(--violet); padding: 1rem 6rem; display: flex; align-items: center; gap: 2rem; }
+  .cover-bottom span { color: rgba(255,255,255,0.7); font-size: 0.85rem; }
+  .cover-bottom strong { color: #fff; }
+
+  /* ── SECTIONS ── */
+  section { padding: 5rem 6rem; scroll-margin-top: 68px; }
+  section.alt { background: var(--gris); }
+
+  .section-tag { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 4px 14px; border-radius: 20px; margin-bottom: 1.2rem; }
+  .tag-violet { background: var(--violet-light); color: var(--violet); }
+  .tag-vert { background: var(--vert-light); color: #3a8020; }
+  .tag-bleu { background: var(--bleu-light); color: #005a8e; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 2.6rem; font-weight: 900; line-height: 1.15; margin-bottom: 0.4rem; }
+  .section-title em { font-style: normal; }
+  .section-title em.v { color: var(--violet); }
+  .section-title em.b { color: var(--bleu); }
+  .section-title em.g { color: var(--vert); }
+  .section-lead { font-size: 1.1rem; color: #666; max-width: 680px; line-height: 1.8; margin-bottom: 2.5rem; }
+  .divider { width: 56px; height: 4px; border-radius: 2px; margin-bottom: 2.5rem; }
+  .dv { background: var(--violet); } .db { background: var(--bleu); } .dg { background: var(--vert); }
+
+  /* ── LAYOUTS ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+
+  /* ── CARDS ── */
+  .card { background: #fff; border-radius: 14px; padding: 1.8rem; box-shadow: 0 4px 18px rgba(0,0,0,0.06); border: 1px solid rgba(0,0,0,0.04); transition: transform 0.2s, box-shadow 0.2s; }
+  .card:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(0,0,0,0.1); }
+  .card-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; font-size: 1.4rem; }
+  .ci-v { background: var(--violet-light); } .ci-b { background: var(--bleu-light); } .ci-g { background: var(--vert-light); }
+  .card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+  .card p { font-size: 0.88rem; color: #666; line-height: 1.6; }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 2.8rem; }
+  .timeline::before { content: ''; position: absolute; left: 10px; top: 4px; bottom: 4px; width: 3px; background: linear-gradient(to bottom, var(--violet), var(--bleu), var(--vert)); border-radius: 2px; }
+  .tl-item { position: relative; margin-bottom: 2.2rem; }
+  .tl-dot { position: absolute; left: -2.4rem; top: 3px; width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 800; color: #fff; border: 2px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+  .tl-item h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.25rem; }
+  .tl-item p { font-size: 0.86rem; color: #666; line-height: 1.6; }
+
+  /* ── ORG CHART ── */
+  .org-chart { background: #fff; border-radius: 20px; padding: 2.5rem; box-shadow: 0 6px 32px rgba(0,0,0,0.07); }
+  .org-level { display: flex; justify-content: center; gap: 0.8rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
+  .org-node { padding: 0.75rem 1.4rem; border-radius: 12px; text-align: center; font-size: 0.82rem; font-weight: 700; min-width: 140px; }
+  .on-nat { background: var(--violet); color: #fff; font-size: 0.95rem; min-width: 200px; }
+  .on-reg { background: var(--bleu); color: #fff; }
+  .on-dep { background: var(--vert); color: #fff; }
+  .org-arrow { text-align: center; color: #bbb; font-size: 1.3rem; margin-bottom: 0.3rem; }
+  .org-lbl { text-align: center; font-size: 0.72rem; color: #999; margin-bottom: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+
+  /* ── ENJEUX CARDS ── */
+  .enjeux-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 1.5rem; }
+  .enjeu-card { border-radius: 14px; padding: 1.8rem; position: relative; overflow: hidden; color: #fff; }
+  .enjeu-card .bg-num { position: absolute; right: -8px; bottom: -16px; font-family: 'Playfair Display', serif; font-size: 7rem; font-weight: 900; opacity: 0.1; line-height: 1; }
+  .enjeu-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.6rem; position: relative; }
+  .enjeu-card p { font-size: 0.84rem; opacity: 0.9; line-height: 1.55; position: relative; }
+  .enjeu-card .icon { font-size: 2.2rem; margin-bottom: 0.8rem; }
+
+  /* ── PROGRAMMES ── */
+  .program-card { border-radius: 14px; overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,0.08); display: flex; flex-direction: column; }
+  .program-header { padding: 1.4rem 1.8rem; color: #fff; }
+  .program-header h3 { font-size: 1.1rem; font-weight: 700; }
+  .program-header .acronym { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 900; opacity: 0.25; float: right; }
+  .program-body { padding: 1.4rem 1.8rem; background: #fff; flex: 1; }
+  .program-body ul { list-style: none; }
+  .program-body ul li { font-size: 0.86rem; color: #555; padding: 0.35rem 0; border-bottom: 1px dashed #eee; display: flex; gap: 8px; }
+  .program-body ul li::before { content: '→'; color: var(--violet); font-weight: 700; flex-shrink: 0; }
+
+  /* ── STATS ── */
+  .stats-row { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+  .stat-box { flex: 1; min-width: 130px; padding: 1.4rem; border-radius: 14px; text-align: center; }
+  .stat-box .number { font-family: 'Playfair Display', serif; font-size: 2.3rem; font-weight: 900; }
+  .stat-box .label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 3px; }
+  .sb-v { background: var(--violet); color: #fff; }
+  .sb-b { background: var(--bleu); color: #fff; }
+  .sb-g { background: var(--vert); color: #fff; }
+  .sb-l { background: var(--violet-light); color: var(--violet); }
+
+  /* ── CALLOUT ── */
+  .callout { border-radius: 10px; padding: 1.1rem 1.4rem; margin: 1.2rem 0; display: flex; gap: 0.9rem; align-items: flex-start; }
+  .co-v { background: var(--violet-light); border-left: 4px solid var(--violet); }
+  .co-b { background: var(--bleu-light); border-left: 4px solid var(--bleu); }
+  .co-g { background: var(--vert-light); border-left: 4px solid var(--vert); }
+  .callout-icon { font-size: 1.2rem; margin-top: 1px; flex-shrink: 0; }
+  .callout p { font-size: 0.87rem; color: #444; line-height: 1.6; }
+  .callout strong { display: block; margin-bottom: 2px; font-size: 0.92rem; }
+
+  /* ── FINANCEMENT ── */
+  .fin-bar-row { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.9rem; }
+  .fin-label { width: 200px; font-size: 0.83rem; font-weight: 600; }
+  .fin-bar-track { flex: 1; height: 26px; background: #f0f0f0; border-radius: 13px; overflow: hidden; }
+  .fin-bar-fill { height: 100%; border-radius: 13px; display: flex; align-items: center; padding-left: 10px; color: #fff; font-size: 0.75rem; font-weight: 700; }
+  .fin-percent { width: 40px; text-align: right; font-size: 0.83rem; font-weight: 700; }
+
+  /* ── PARTENAIRES ── */
+  .partner-card { padding: 1.4rem; border-radius: 12px; text-align: center; border: 2px solid transparent; transition: all 0.2s; }
+  .partner-card:hover { border-color: var(--violet); transform: translateY(-2px); }
+  .partner-card .icon { font-size: 2.2rem; margin-bottom: 0.7rem; }
+  .partner-card h4 { font-size: 0.82rem; font-weight: 700; margin-bottom: 0.3rem; }
+  .partner-card p { font-size: 0.74rem; color: #777; line-height: 1.5; }
+  .pc-v { background: var(--violet-light); }
+  .pc-b { background: var(--bleu-light); }
+  .pc-g { background: var(--vert-light); }
+  .pc-o { background: #fff3e8; }
+
+  /* ── LEXIQUE ── */
+  .lex-section-title { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; padding: 6px 14px; border-radius: 20px; margin: 2rem 0 1rem; display: inline-block; }
+  .lex-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; margin-bottom: 1rem; }
+  .lex-item { background: #fff; border-radius: 8px; padding: 0.8rem 1rem; border-left: 3px solid var(--violet); box-shadow: 0 2px 6px rgba(0,0,0,0.04); }
+  .lex-item.lb { border-left-color: var(--bleu); }
+  .lex-item.lg { border-left-color: var(--vert); }
+  .lex-item.lo { border-left-color: #d47020; }
+  .lex-item strong { font-size: 0.88rem; color: var(--violet); display: block; margin-bottom: 1px; }
+  .lex-item.lb strong { color: var(--bleu); }
+  .lex-item.lg strong { color: #3a8020; }
+  .lex-item.lo strong { color: #c06010; }
+  .lex-item span { font-size: 0.76rem; color: #555; line-height: 1.4; }
+
+  /* ── OUTILS ── */
+  .tool-row { display: flex; align-items: center; gap: 1.4rem; background: #fff; border-radius: 12px; padding: 1.1rem 1.6rem; box-shadow: 0 2px 10px rgba(0,0,0,0.05); margin-bottom: 0.8rem; }
+  .tool-icon { font-size: 1.8rem; width: 48px; text-align: center; flex-shrink: 0; }
+  .tool-info { flex: 1; }
+  .tool-info h4 { font-size: 0.92rem; font-weight: 700; margin-bottom: 2px; }
+  .tool-info p { font-size: 0.8rem; color: #777; line-height: 1.5; }
+  .tool-badge { padding: 3px 11px; border-radius: 20px; font-size: 0.7rem; font-weight: 700; white-space: nowrap; }
+
+  /* ── PRÉSIDENT ── */
+  .president-block { background: linear-gradient(135deg, var(--violet) 0%, #7a1d62 100%); border-radius: 22px; padding: 3.5rem; color: #fff; display: grid; grid-template-columns: 1fr 3fr; gap: 3rem; align-items: center; }
+  .pres-avatar { text-align: center; }
+  .pres-avatar .bee { font-size: 4.5rem; }
+  .pres-avatar .name { font-weight: 700; font-size: 0.88rem; margin-top: 0.8rem; }
+  .pres-avatar .title { font-size: 0.75rem; opacity: 0.65; }
+  .pres-quote { font-size: 1.15rem; line-height: 1.8; font-weight: 300; }
+  .pres-quote::before { content: '❝ '; font-family: 'Playfair Display', serif; font-size: 2.8rem; color: rgba(255,255,255,0.25); display: block; line-height: 0.5; margin-bottom: 1rem; }
+
+  /* ══════════════════════════════
+     ── TROMBINOSCOPE ──
+  ══════════════════════════════ */
+  .trombi-section { margin-top: 2.5rem; }
+  .trombi-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.7rem; }
+  .trombi-title span { background: var(--violet); color: #fff; padding: 4px 12px; border-radius: 20px; font-size: 0.75rem; }
+
+  /* Niveau 1 : Président seul */
+  .trombi-level { margin-bottom: 2.5rem; position: relative; }
+  .trombi-level-label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.12em; color: #aaa; margin-bottom: 1rem; padding-left: 4px; }
+
+  .trombi-row { display: flex; gap: 1.2rem; flex-wrap: wrap; }
+  .trombi-row.centered { justify-content: center; }
+
+  /* Connector lines via CSS */
+  .trombi-connector { position: relative; }
+  .trombi-connector::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 2px; height: 32px; background: linear-gradient(to bottom, var(--violet), var(--bleu)); }
+
+  .person-card {
+    background: #fff;
+    border-radius: 16px;
+    padding: 1.4rem 1.2rem 1.2rem;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    border: 2px solid transparent;
+    transition: all 0.25s;
+    min-width: 135px;
+    max-width: 155px;
+    flex: 0 0 auto;
+    position: relative;
+  }
+  .person-card:hover { border-color: var(--violet); transform: translateY(-4px); box-shadow: 0 10px 28px rgba(161,40,133,0.15); }
+
+  /* Photo placeholder */
+  .person-photo {
+    width: 72px; height: 72px; border-radius: 50%;
+    margin: 0 auto 0.8rem;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.8rem;
+    border: 3px solid transparent;
+    position: relative;
+    overflow: hidden;
+    background: var(--gris);
+  }
+  .person-photo .initials {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem; font-weight: 900; color: #fff;
+    position: relative; z-index: 1;
+  }
+  .person-photo .photo-overlay {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    background: rgba(0,0,0,0.45);
+    opacity: 0; transition: opacity 0.2s;
+    font-size: 0.6rem; color: #fff; font-weight: 700; letter-spacing: 0.05em;
+    text-align: center; padding: 4px;
+  }
+  .person-card:hover .photo-overlay { opacity: 1; }
+
+  /* Couleur par rôle */
+  .role-president .person-photo { background: linear-gradient(135deg, var(--violet), #7a1d62); border-color: var(--violet); box-shadow: 0 0 0 4px var(--violet-light); }
+  .role-vp .person-photo { background: linear-gradient(135deg, #9a2078, var(--violet)); border-color: #c050a0; box-shadow: 0 0 0 3px #fce8f5; }
+  .role-bureau .person-photo { background: linear-gradient(135deg, var(--bleu), #005a8e); border-color: var(--bleu); box-shadow: 0 0 0 3px var(--bleu-light); }
+  .role-membre .person-photo { background: linear-gradient(135deg, #3a8020, var(--vert)); border-color: var(--vert); box-shadow: 0 0 0 3px var(--vert-light); }
+  .role-suppleant .person-photo { background: linear-gradient(135deg, #888, #555); border-color: #aaa; box-shadow: 0 0 0 3px #f0f0f0; }
+  .role-staff .person-photo { background: linear-gradient(135deg, #d47020, #b05010); border-color: #e08020; box-shadow: 0 0 0 3px #fff3e0; }
+  .role-veto .person-photo { background: linear-gradient(135deg, #1a7a6a, #0a5a4a); border-color: #2a9a7a; box-shadow: 0 0 0 3px #e0f5f0; }
+
+  .person-name { font-size: 0.82rem; font-weight: 700; color: var(--texte); line-height: 1.3; margin-bottom: 3px; }
+  .person-role { font-size: 0.73rem; color: #888; line-height: 1.3; }
+  .person-role.rv { color: var(--violet); font-weight: 700; }
+  .person-role.rb { color: var(--bleu); font-weight: 600; }
+  .person-role.rg { color: #3a8020; font-weight: 600; }
+
+  .role-badge {
+    position: absolute; top: 8px; right: 8px;
+    width: 20px; height: 20px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.6rem; font-weight: 700; color: #fff;
+  }
+  .rb-v { background: var(--violet); }
+  .rb-b { background: var(--bleu); }
+  .rb-g { background: var(--vert); }
+  .rb-s { background: #888; }
+  .rb-o { background: #d47020; }
+  .rb-t { background: #1a7a6a; }
+
+  /* Coordonnées GDS */
+  .gds-info-bar {
+    background: linear-gradient(90deg, var(--violet), var(--bleu));
+    border-radius: 14px; padding: 1.2rem 2rem;
+    display: flex; align-items: center; gap: 2rem; flex-wrap: wrap;
+    margin-bottom: 2rem; color: #fff;
+  }
+  .gds-info-bar .gds-name { font-size: 1.2rem; font-weight: 900; }
+  .gds-info-bar .gds-addr { font-size: 0.82rem; opacity: 0.8; line-height: 1.5; }
+  .gds-info-bar .contact-item { display: flex; align-items: center; gap: 0.5rem; font-size: 0.85rem; font-weight: 600; }
+  .gds-info-bar .contact-item span { opacity: 0.8; }
+
+  /* Séparateur entre niveaux dans trombi */
+  .trombi-sep { display: flex; align-items: center; gap: 1rem; margin: 0.5rem 0 1.5rem; }
+  .trombi-sep::before, .trombi-sep::after { content: ''; flex: 1; height: 1px; background: #e0e0e0; }
+  .trombi-sep span { font-size: 0.7rem; color: #bbb; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; white-space: nowrap; }
+
+  /* ── ACCENT BAND ── */
+  .accent-band { height: 5px; background: linear-gradient(to right, var(--violet), var(--bleu), var(--vert)); }
+
+  /* ── FOOTER ── */
+  footer { background: #1a0d18; color: rgba(255,255,255,0.55); padding: 2.5rem 6rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
+  footer .footer-logo { display: flex; align-items: center; gap: 1rem; }
+  footer .footer-logo img { height: 44px; width: 44px; object-fit: contain; }
+  footer .footer-logo-text .name { font-size: 1.2rem; font-weight: 900; color: #fff; }
+  footer .footer-logo-text .name span { color: var(--vert); }
+  footer p { font-size: 0.8rem; }
+  footer .footer-links { display: flex; gap: 1.2rem; }
+  footer .footer-links a { color: rgba(255,255,255,0.45); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+  footer .footer-links a:hover { color: var(--violet); }
+
+  /* ── ANIM ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .cover-content > * { animation: fadeUp 0.65s ease both; }
+  .cover-content > *:nth-child(1){animation-delay:0.1s}
+  .cover-content > *:nth-child(2){animation-delay:0.2s}
+  .cover-content > *:nth-child(3){animation-delay:0.3s}
+  .cover-content > *:nth-child(4){animation-delay:0.4s}
+  .cover-content > *:nth-child(5){animation-delay:0.5s}
+  .cover-content > *:nth-child(6){animation-delay:0.6s}
+
+  @media (max-width: 900px) {
+    section { padding: 3.5rem 1.5rem; }
+    .cover-content { padding: 3rem 1.5rem; }
+    .cover h1 { font-size: 2.6rem; }
+    .grid-2,.grid-3,.grid-4,.enjeux-grid,.lex-grid { grid-template-columns: 1fr 1fr; }
+    nav ul { display: none; }
+    .president-block { grid-template-columns: 1fr; }
+    .two-col { grid-template-columns: 1fr; }
+    .trombi-row { justify-content: center; }
+    footer { padding: 2rem 1.5rem; flex-direction: column; text-align: center; }
+    .cover-bottom { padding: 1rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════ NAVIGATION -->
+<nav>
+  <img class="logo-img" src="data:image/png;base64,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" alt="GDS France logo">
+  <div>
+    <div class="logo-text"><span>GDS</span> France</div>
+    <div class="logo-tagline">L'action sanitaire ensemble</div>
+  </div>
+  <ul>
+    <li><a href="#president">Accueil</a></li>
+    <li><a href="#reseau">I. Réseau GDS</a></li>
+    <li><a href="#filiere">II. Filière Apicole</a></li>
+    <li><a href="#programmes">III. Programmes</a></li>
+    <li><a href="#partenaires">IV. Partenaires</a></li>
+    <li><a href="#ressources">V. Ressources</a></li>
+    <li><a href="#trombi">Trombinoscope</a></li>
+  </ul>
+</nav>
+
+<!-- ═══════════════ COUVERTURE -->
+<section class="cover" id="accueil">
+  <svg class="cover-hex" viewBox="0 0 560 560" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="280,46 510,161 510,399 280,514 50,399 50,161" stroke="white" stroke-width="2" fill="none"/>
+    <polygon points="280,110 460,215 460,345 280,450 100,345 100,215" stroke="white" stroke-width="1.5" fill="none"/>
+    <polygon points="280,174 410,254 410,306 280,386 150,306 150,254" stroke="white" stroke-width="1" fill="none"/>
+    <line x1="280" y1="46" x2="280" y2="514" stroke="white" stroke-width="0.5"/>
+    <line x1="50" y1="161" x2="510" y2="399" stroke="white" stroke-width="0.5"/>
+    <line x1="510" y1="161" x2="50" y2="399" stroke="white" stroke-width="0.5"/>
+  </svg>
+  <div class="cover-content">
+    <div class="cover-logo">
+      <img src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAIAAgADASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAYHBAUIAwIB/8QAShAAAQMDAQQHBAYHBwIFBQAAAAECAwQFEQYHEiExE0FRYXGBkRQiobEVMkJicsEII1KCorLCFiQzQ1OS0XPwNEVVk+EXY9Li8f/EABsBAQACAwEBAAAAAAAAAAAAAAABBAIDBQYH/8QANxEAAgIBAQQGCQQDAQADAAAAAAECAwQRBRIhMQZBUXGR0RMyYYGhscHh8BQiQlIVIzPxFkNi/9oADAMBAAIRAxEAPwDjIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGXXWy4UEFNPW0c1NHVMV8Cyt3ekan2kReOO/kpiAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG30tpq+anuCUNjt01XLw31amGRp2ucvBqeJ0Ds82E2i19HXaplZdatMKlMzKU7F7+t/nhO5QCktCbP8AU2sp0+iqFWUiOw+smyyFnbx+0vc3KnROz7Y9pjSyR1laxLvcmcenqGJ0ca/cZyTxXK+BYtPDDTwMgp4o4Yo2o1jGNRrWonJEROSEC2/ao/s1s+qmwSbtbcf7pBheKI5Pfd5Nzx7VQkg5x2v6m/tXr64XKOTfpI3ez0nZ0TOCKniuXfvERAIJAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAP1EVyoiIqqvBEQtTZ3sU1DqHo629b9ltzuKdI39fIn3WL9Xxd6KAVlbqKsuNZHRUFLNVVMq7scUTFc5y9yIXfs72CTzdHX6znWCPgqUFO/L17nvTgng3K96FzaM0bp3SNH7PZLeyF7kxJO/wB6aX8Tl4+SYTsQkBOhGpg2S0WyyW9lvtNDBRUrOUcTMJntXtXvXiZwBJAOTv0jNUf2g19LQwSb1FaUWmjwvBZM/rHevu/uIdFbUtTM0loe4XhHIlQjOipUX7UzuDfHH1l7mqcVyPfJI6SRyue5VVzlXKqq9ZDJR8gAgkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAG80hpO/wCq672Sx26WpVF/WS43Y4+9zl4J4c16gDRk12fbM9T6yeyajpvZLeq+9W1CK2PH3U5vXw4dqoXZs72H2Kx9HW6icy816cejVv8Ad417mr9fxdw7i22MbGxrGNRrGphrUTCInYhOhGpBdnuyzTGj0jqIoPpC5t4rWVLUVzV+43kzy496k7AJIAAAABqtXXum05pm4Xurx0dJCsm7nG+7k1virlRPMA59/Sl1T9I6mptNU0mae2t6SfC8HTPTl+63Hm5xTJk3Stqblcqm41kiyVNTK6WV69bnLlfmYxiZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/WornI1qKqquEROsA/DKtdvrrpXR0NtpJ6upkXDIoWK5y+SFnbOtiV/v8A0dbflfZrcuFRr2/3iRO5q/V8XeinQ+jtI6f0lQ+y2O3x0+UxJMvvSy/icvFfDknUiE6EalO7Otgir0dfrSfHJyW+nfx8JHp8m+petpttBaaCOhtlHBR0saYZFCxGtT06+8ywAAASQAAAAAACgf0rdU/+A0jSydlXWYXxSNq/xOx+EvW6VtNbbbU3CskSOnponSyuXqa1MqvohxDq+91OpNTXC91WUkq5lejc53G8mt8moieRDJRqQAQSAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbrSel79qmv9isdulqnpjfeiYjjTtc5eCf94OhNnWw2y2Xoq7Uj2XiuTCpDj+7Rr4Lxf58O4ApXZ9s01PrKRktHS+yW9V96tqEVsePupzevhw7VQ6P2ebLdM6Oayohg9vuac6yoaiuav3G8meXHvUnEbGRxtjjY1jGoiNa1MIiJ1Ih9EkAAEkAAAAAAAAAAA+ZHtjY6R7kaxqKrnKuERE6wCnP0pNU/R2mafTVNJiouTt+fC8WwsXl+87Hk1xzOSjanqZ+rdcXC7o5Vp1f0VKi/Zhbwb4Z+sve5SLmJkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACzdnGxzUOqEirrii2i1uw5JJWfrZW/cZ2d64TrTIBXNvo6u4VkdHQ001TUyu3Y4omK5zl7kQvHZzsFmm6K4azmWGP6yW+B/vr+N6cvBvHvQuLRGidO6Po+gstC1krkxLUye9NL+J3Z3JhO4kZOhGph2a1W6zW+OgtVFBR0sf1Y4mI1PFe1e9eJmAEkAAAAAAAAAAAAAAAArP9IzVP9n9BSUFPJu1t2VaaPC8Ujx+sd6Kjf3yzDkDbxqn+0+0CrdBJv0NB/dKbC8FRq+87zdnj2IhBKICACCQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACe7C7vpy0a5gfqShp5oZkSOCpmTLaWXPuvVF4Y6sqnDgvDidgJxTKHAR0f+jntI+kaeLSF7nzWQsxQTPXjMxE/w1+81OXaid3GUQy7gASQAAAAAAAAAAAAAAAAAAQrbVqn+ymga2rhk3K2pT2WkwvFHuRcuT8Lcr4ohxuWr+ktqn6b1v9D08m9R2hqxcF4OmXCyL5YRvi1e0qoxZkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD1pZ5qWpiqaaV8M0T0fHIxcOa5FyiovUuTyAB15sV2hQa2sfQ1bmR3qjaiVUacOkTkkrU7F606l7lQsE4V0vfLjpu+U15tU3RVNO7KfsuTra5OtFTgp2Rs91bbtZ6bhu9AqMf9SogVcuhkTm1e7rRetCSCRAAkgAAAAAAAAAAAAEe2j6ji0poy43p6t6WGPdp2r9uV3Bieq5XuRSQnN36VGqfbb7SaVppMw0CJPUoi8Fmcnuov4Wr/GpBJS08ss88k8z3SSyOV73uXKucq5VVPglezrTEeoa+WSs30oqdE391cK9y8m59VX/5LOpdH6ZpkRI7RTux1yZk/mVS1ThztjvLgjsYWxr8qHpE0l7Shj9a1zlw1quXsRDoiG0WmH/BtdFHj9mBqfkZkcbI0xGxrE7GpgsrZj65fA6MejUv5WfD7nOkdvr5P8OhqX/hicv5GRHYL7J9SzXFydqUz/8Ag6FBmtmx65G1dGoddj8CgGaX1E7lZa7zhVPmeiaS1Kv/AJNVf7S+wT/jYdrNi6N0f3fwKF/shqX/ANHqfRP+T5XSWpE/8mqvJpfgJ/xtfax/8bo/u/h5HP79MaiZzstcvhCq/I8JLHeo0zJZ7gxPvUz0/I6HBD2bD+xi+jdXVNnN0tLUw/4tPNH+JioeJ0uY1RQUNRn2ijp5c89+Jrvmhg9mdkvgaZdGv62fD7nOIL8qtJ6bqc9JZqRM/wCmzo/5cGprNnGnJ0XoW1VKvV0cuf5smqWzrFyaKtnR3Jj6rTKZBZNfsseiKtDdmqvU2aLHxRfyI7ctCalokVyUSVTE+1TvR3w4L8CvPFuhziULdl5dXrQfu4/IjAPSognppViqIZIZE5tkarVTyU8yuUGmnowAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACWbL9a12iNSMuFPvS0kuGVlNnhKzPV95OaL+SqRMAHeFjulDe7TTXW2VDaikqWI+N7etOxexUXgqdSoZpyhsJ2jv0hdvou6SudY6x6b+ePs0i8OkTu/aTs49WF6tjeySNskb2vY5Ec1zVyiovJUUkg+gASQAAAAAAAAAa3VF4pdP6err1WL+po4XSKmcbypyaneq4RPE4fvNwqrtdqu6Vr9+pqpnTSu+85crjuL4/St1TuQUOkaWT3pMVVZhfsplI2r55djuaUNapaeC50s9XG6Snjma+RjcZc1FyqcSOb0M4rVpMu/QdpSzaZpadzd2aROlm7d93V5JhPI3xB37TrCie7S3Fy/9Nif1GNLtStyf4Vrqnfie1v8Ayd6OTRCKipcj3te0cGitQjYtEWCCtZNqjfsWNV/FVY/pPF21So+zZok8Z1X+kPNo/t8w9t4S/n8H5FoAqtdqVd1Wmn/9xw/+qVd/6VTf+44j9dT2mP8AncL+3wZagKtbtTq/tWiBfCZU/I9Y9qjv8yxov4ar/wDUn9dR2/Mlbbwn/P4PyLNBXkO1KhX/ABbTUM/DI13/AAZ1PtL0/JwkirofxRNVPg5TJZdL/kbo7Ww5crF8iagjlJrfTFRhG3Vka9krHM+Kpg3NHcKCtTNHW01Qn/2pUd8lN0bIS9V6lqvIqs9SSfczKABmbgAAAAADHrqKjrouiraWGoj/AGZGI5PiQ6+bNrTVNdJbJZKGXmjc78a+S8U9fInINVlMLPWRWyMOjIWlkU/n4lB6i0tebGqurKbegzhJ4veZ69Xng0h0q9rXsVj2o5rkwqKmUVCvdbbPoZmSV9hjSKZOL6VPqv8Aw9i93LwOZfgOK3q+J5nP2BKtOeO9V2dfu7SrAfUjHxyOjkY5j2qqOa5MKip1KfJzTzYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABIbJo3UF2Rr4qNYIV/zaj3G+Sc18kJvZtmVug3ZLpVy1b+uOP3GeGea/A6ONsnKyOMY6LtfA5OXtvCxeE56vsXF/neVVBDLPK2KCJ8sjuTWNVVXyQlNn2f6hr9180LKGJftTrh3+1OPrgt+2Wu3WyLoqCjhp29e43Cr4rzXzMw7+N0brjxulr7Fw/PgeZy+ltsuGPDT2vi/L5kHtGzWzUyI64TT1z+tM9Gz0Tj8TfLpXTi06wfQ1HuqmMpGm9/u5/E3QO3Vs/GqW7GteGvzPPXbTzLpb07H46fBFHa80tNp2uR8W9JQTL+qkXm1f2Xd/z9S1P0c9pSQuh0bfqj9W5d22zvX6q/6Kr2fs+nYZGqHWZ1pmpr3PBFTStwvSORF8W9eU7ig6tsUNbK2lnWaJj16OVEVquRF4LheKHjds4EMS3Wt8H1da+3Ye+2BtKzNo0tT3o9fU/v2ne4Kn2BbSk1Rb22C8zp9NUrPckcvGqjT7X406+3n24tg453gACSAAAAY9yrKe3W+pr6yRIqemidLK9fstamVX0QyCmv0pNU/R2mafTVNJiouTt+fC8WwNXl+87Hk1xBJz9rO+1OpdUXC+VWUfVzK9rVXO4zk1vk1ETyNQAQSAAAAAAAAAAAAAAAD9aqtcjmqqKnJU6j8ABu7XqvUNuVEp7pO5ifYlXpG+js48iZWLac1zmxXmi3Orpqfinm1fyXyKyBvryba+TL2PtLJx3+yb07HxR0dba+juVK2qoamOohdycxc+S9i9ymSc+abvtfYa9tVRSLuqv6yJV92ROxU/PqL1sVzprxaoLhSr+rlbndXm1etq96KdjGylctOTPYbM2pDNWjWkl1fVGcAC2dUAAAAAArra1ppklMt/o40bLHhKpqJ9dvJHeKdfd4FWnSVVBHU00tNM3ejlYrHp2oqYU5yq4XU1XNTu4uikcxfFFwcXaFShNSXWeM6QYkarVbH+XPv+55AA5558AAAAAAAAAAAAAAAAAAAAAAGfZrNc7xP0Nuo5J1T6zkTDW+Ll4IZQhKct2K1ZhOyNcXKb0S7TAMihoquvqEgoqaWolX7MbVcpZWntmdPFuzXup6d3PoIVVG+bua+WCeW6gordTpT0NLFTxp9mNuM969q+J38To9dZ+657q8WeZzulOPTrGhb77eS83+cSsbDszrqhGy3epbSM/wBKPD3+a8k+JPLHpax2fddSULFmT/Ol99/qvLywbsHpcXZeNjcYR1fa+L/O48jmbZzMzhOei7FwX394ANHfdV2OzbzKqta+Zv8Akxe+/PYqJy88Fy22FUd6bSXtKFNFl0tyuLb9hvDyqZ4KaF01TNHDG3m+RyNRPNSrL7tMuFRvR2mmZRs6pJMPf6ck+JCrjca+4zdLX1c1Q/qWR6rjwTq8jhZPSKivhUt5+C8z0mH0VybeN7UV4vy+Jbd62iWKh3mUiyV8qdUabrP9y/kikKvO0O/V28yldHQRL1RJl+PxL+WCHg8/k7ay7+G9ur2cPuenxOj+Djcd3efa+Pw5fA9KmeepmWaomkmkdzfI5XKvmp5gHLbberO0kktEZNsrqu2XCC4UFQ+nqqd6SRSMXCtcnWdfbIte0mudPpMu5DdKZEbWU6LyXqe37q/Bcp3rxwbnRmpLlpTUFPebXLuzRLh7F+rKxebHJ1ov/C80IJO5AaPQ+p7bq7TsF5tj/ckTdliVfehkTmx3enxTC9ZvDIxAAAPmWRkUT5ZXtYxjVc5zlwiInNVOKtp+pn6t1tcLxvO9nc/o6Vq/Zhbwb4Z5r3qp0P8ApI6p+gdCutlPJu1t3VYG4Xi2JP8AEX0VG/vHKRDJQABBIAAAAAAAAAAAAAAAAAAAAALR2I1EjqO50iqqxxyRyNTsVyORf5UKuLi2QWx9Fpx9ZK3dfWyb7U+4nBvx3l80LmAm7k0dnYMJSzE1ySevh5k1AB3j3QAAAAAAOcrvM2ou1ZOz6sk73p4K5VLv15dks+maqoR2JpG9FD27zuGfJMr5FDHI2lNNxieT6SXJyhUua1YABzDzAAAAAAAAAAAAAAAAAPuGKWeVsMMb5JHrhrGJlVXsRAlqQ3pxZ8GbabXcLtUpTW+lknk691ODe9V5IniTfSuzeaZGVV9esMfNKZi++v4l6vBOPgWVbqGjt1K2moaaOnhbyaxMea9q956DB2BbdpK79q+P2/OB5jaPSajH1hR++Xb1Lz93iQbTWzWlg3Z73N7TJz6CNVRieK81+HmT2lp6ekgbBSwxwxN4NZG1Gonkh6g9Zi4VGLHSqOnz8TxGZtDIzJb10tfZ1eAAI5qnWFpsKOifJ7TVpyp4l4p+Jfs/PuNt19dEd+x6I00Y9uRNQqjqyREV1Jruy2nehhf7fUpw6OF3uove7l6ZK01LrC83xXRyzez0q8oIVVGqn3l5u8+HcR48xmdI29Y4697+i8/A9jgdFEtJ5Uvcvq/LxJNqDW99u29GlR7HTr/lU6q3Kd7ua/LuIyAebuvsvlvWSbZ63HxqceO5VFJewAA0m8AAAAAAAAAmWyfXVbobUTapm/Nbp1RlbTov12/tJ95OrzTrOwbRcaK7WynuVuqGVFJUMSSKRvJyL8l7uo4MLS2EbSX6SuaWe7Sq6x1b+Ll4+yvX7afdX7SefbmUQdVg+Y3skjbJG5r2ORFa5q5RUXkqKQXbrqn+y2gKuSCTcrq7+60uF4orkXed5Nyue3BJBzvtv1T/AGq1/WVEMm/Q0n91pMLwVrVXLk/E7K+GOwgwBiZAAAAAAAAAAAAAAAAAAAAAAAlGitH1t/lbPKjqe3tX3plTi/uZ2+PJPgZwrlZLdijbRRZfNQrWrZ8aD0zNqC5I6Vrm0ELkWeTlvfcTvX4J5F4RRsiibFG1GMYiNa1EwiInJDwtlDS22ijo6KFsUEaYa1PmvaveZJ3sbHVMdOs97s3Z8cKvTnJ82AAWTogAAA/HKjUVVVEROKqvUfpWO07WDZGyWO1S5b9WqmavP7iL818u003XRpjvMqZuZXiVOyfuXaR/aPqJL7eOjp3KtFS5ZF2PXrf59XchFgDz1k3ZJyfWfPb7532OyfNgAGBpAAAAAAAAAAAAABPtDaClr0juF6a6GlX3o4OT5U7V7E+K9xZxcS3KnuVrX6d5UzM2nDr9Ja9F8X3Ee0rpe56gn/u0fRUyLiSoenut7k7V7k+Bb2mNMWvT8P8AdYukqFTD6iTi93h2J3IbimghpoGQU8TIomJhrGJhETuQ9D2+z9kU4a3nxl2+R862pt2/Obiv2w7PPt+QAB1jiA8aypp6OmfU1UzIYY0y571wiHherpR2e3yV1dKkcTOXa5epqJ1qUnq/VFdqKrzKqxUjF/VU7V4N717V7zmbS2pXhR05yfJeZ2Nk7Gt2hLXlBc39F7fkSDWO0KprFfR2RX01PyWflI/w/ZT4+BAnKrnK5yqqquVVes/AeFysu3Knv2vX6dx9Iw8GjDr3KY6fN94ABWLYAAAAAAAAAAAAAAAAABe36PG05KR0Oj9QVGIHKjLfUvX/AA1XlE5exfsr1cuWMRT9InVjdSa5fR0kySUFqRaeJWrlrpM/rHJ5ojf3UK0AAAAAAAAAAAAAAAAAAAAAP1EVVRERVVeSIAfh60lPPV1DKemhfNK9cNYxuVUlmmNn92uasnrkW30q8ffT9Y5O5vV5/EtHT9gtdjg6O30yNcqYfK7i9/iv5ci7RhTs4y4I7ODsS/I0lP8AbH4+5EN0hs6bGrKy/wC693NtK1ctT8S9fgnDvUsWNjI42xxsaxjUw1rUwiJ2Ih9A7FVMKlpFHsMXDpxYbta82AAbS0AAAD8cqNarnKiIiZVV6jFu1yorVRuq6+oZDE3rdzVexE617ioda62rL4rqSkR1Lb8/Uz78v4l7O75le/JhSuPPsOfnbSqw4/u4y6kbnaBrvpUktdjl/Vrls1U1frdqM7u/07SuADhXXStlvSPDZeZbl2b9j+wABqKoAAAAAAAAAAAAALH2V6UbMrL9cY8sauaWNyc1T7a/l69haw8SeXaq4f8AiKWfnV4NLts9y7X2GXs70O2Bsd2vUSOlXDoKd6cGdjnJ293V48rFAPoWJh14larrX3PludnXZtrstfcupdwABaKYPKqnhpaaSpqJEjiiar3uXkiJzU9SBbZrk+ns9Nbo3Kntciukx1tZjh6qnoVszJWNRK19X4i3gYjy8iFK638Ov4ED1rqOo1DdFlVXMpI1VKeLsTtXvX/4NCAfNrrZ3Tc5vVs+t0UV0VqutaJAAGs2gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9aannqpmwU0Mk0rlw1kbVc5fBEDenMHkfrWq5yNaiq5VwiInFSXU2zTW9RR+1MsUrW9TJJGMf/ALXKimpr9O6ls8iS1dnuVIrFykqwuREVOtHJw+JohlUTekZpvvRrjbXJ6KSNxp7Z7ebjuzVuLfTrx/WJmRU7m9XngsjTmk7LY0a+mp+lqE/z5vef5dSeRUlHrDUtJhI7vUOROqXEn8yKbel2l6giwk0VFUJ170aovwVPkdii7Gr6nqenwMzZuPo9173a+P54FxArOl2p8kqrN4ujn/JU/M2tLtLsEmEmhrYF68xo5Pgv5HQjmUy/kd6G18OfKfjqvmTcEcptcaXnwjbqxi9kkb2/FUwbSlvNoqsez3SilVeps7VX0ybY2wlyaLcMmmz1Zp+9GeD8RUVMoqKi9aGk1FqqzWNrkqqpJJ05QRe89fFOrzwZSnGC1kzO22FUd6b0RvCHat15bbSj6ahVtdWpww1f1bF+8vX4J8CB6q1xdb0joIl9io14dFG73nJ953X4cEIqcu/aHVX4nmc7pBrrDG8X9F5+Bn3u73C81i1VwqHSv+ynJrE7ETqQwADmNtvVnmJzlOTlJ6tgAEGIAAAAAAAAAAAAAABudGWZ191BBRLnoU/WTqnUxOfrwTzL7hjjhiZFExrI2NRrWomERE5IhX+xShay211xVPfllSFq9iNTK+qu+BYZ7vYOKqsZWdcuPu6j5t0mzJX5bqXqw4e/r8vcAAds86AAACtNt9O9UtlWiKrE6SNy9irhU+S+hZZrdS2invlnmt9Qu6j0yx6JxY5OTv8AvvKW0cZ5ONKqPN8vdxOhsrLjiZcLpclz7nwOegZ99tFdZa99HXwqx6cWuT6r07Wr1oYB84nCUJOMlo0fWK7I2RU4PVMAAxMwAAAAAAAAAAAAAAAAAAAAAAAAAAAD1paapq5khpaeWeReTI2K5y+SErs2zTWdz3XMs8lLGv26pyRY/dX3vgarb6qlrZJLvZhOyEPWehDwXLZdhsy7r7zfGM7Y6SNXfxOx/KTix7LtG2rdd9Ge3Sp9usf0mf3eDfgcq7b2JX6rcu77lOzaNMeXE5ttlsuNzm6G3UFTWSfswxK9U8ccic2DY/qy4K19ayntcS8czv3n47mtz8VQ6JpqeClhbDTQRwRN+qyNiNankh6nHv6R3S4VRS+JSs2pN+otCs7BsZ01Q7r7pPU3SROaOXoo/RvH+In1os9qtEPRWu3UtGxUwvQxI1XeKpxXzM4HFvzL8j/pNv5eBQsvss9Z6gAFY1Gsuen7Hc0X6Qs9DVKvN0kDVd64yRa57JdFVuVjoZ6Jy/ap53J8HZT4E8BYqy76vUm17zZC6yHqyaKcuewymcqutl/mjTqZUQI/+Jqp8iLXTY3q+lytL7DXt6kim3XL5PRE+J0Yay/X+y2GDprvcqekbjKI93vO8GpxXyQ6VG285NRT3vZp5cS3Xn5Gui4+45buuktTWvK11ir4mpzekKuZ/uTKfE0i8Fwpduq9tkTUfBpq3rI7klTVJhvijEXK+ap4FP3y6196uctyuU/TVMq5e/dRvwTgh6zBuyrY63wUff8AT7nYx53TWtkdDHhqaiBFSGeWLPPceqfI81VVXKrlVPwF/UtavkAACAAAAAAAAAAAAAAAAAAAAAC4tjcjH6UkYmN6Oqejk8UapNSn9kl7ZbrzJbqh6NhrcI1VXgkicvXKp44LgPoOxb424kUua4M+XdIMaVGdNvlLivf9wADqnFAAAAAAMK72ugu1ItLcKZk8S8Uzzavai80XwK51BszqoldNZalKhnNIZlRr08Hcl88FpgpZezsfLX+yPHt6zo4O1crBf+qXDsfFfncc6XO1XG2SdHX0U9OucIr2KiL4LyXyMM6VkYyRiskY17V4K1yZRTSV+kNN1qqs1pp2uXrizGv8ODz93RqX/wBU/H7eR6jH6XQa0ur07vJ+ZQoLfq9mVilVVgqa2Bezfa5E9Uz8TV1GyteK0968EfT/AJo78jnT2Dmx5R17mvqdSvpLs+fOTXen9NStATybZfeE/wAGvoH/AIle3+lTEl2cakZ9VlJJ+Gb/AJRCvLZWZHnWy3HbWBLlavl8yHA39z0dqC3Uz6mso444GJ7z1qI8fzGgKdtNlT0si0/atC7TkVXreqkpL2PUAzLVa7ldZ3QWygqq2RqZc2CJXqidq45ISGk2b63qVTo9P1Dc/wCq9kf8zkKtmRVXwnJLvaM5Wwh6zSIkCxKTY5rKfHSsoKb/AKtRnH+1FNxR7Dbs/Htl9ooe3oonSfPdKs9q4cOdi+fyNMsyiPORUYL2o9htqZj2y+1s3b0UTY/nvG8oNkGiqbHTUtXWY/1qlyfybpUnt/DjybfcvPQ0y2lQuWrObT1pqeoqZOjp4JZnr9mNiuX0Q6soNEaRocez6dt2U5LJCkip5uypvaeCGnjSOnhjiYnJrGo1PRCnZ0lgvUrb73p5miW1Y/xicq27Qesa/Hs+nq5EXks0fRJ6vwSi17F9U1OHVlRb6FvWjpFe9PJqY+J0MChb0iyZeqkivPadr5JIqG2bDbbGqLcr5VVHa2CJsXxXeJbadmWirduubZmVL0+1UvdJn91V3fgTEHPt2nl2+tY/dw+RVnl3T5yPCio6Sii6GjpYKaP9iKNGJ6Ie4BRbberK7eoABAAAAAB4VtXSUMC1FbVQ00LecksiManmpKTb0QS1PcEBv+1rSFs3mU9TNcpk+zSsy3P4nYT0yV3qHbRqGs347TS01siXk9U6WX1X3f4Tp4+x8u/lHRe3h9y3Xg3WdWneX7V1NPSQOqKqeKCFiZdJI9GtTxVeBA9SbXNK2reio5JbrOnVTpiPPe9eHpk59vF4ut4n6e6XCprJOpZZFcjfBOSeRgHcxujlceN0tfYuC/PA6FWy4rjN6lh6m2u6ouu9FQPjtNOvDEHGTHe9ePmiIQGqqJ6qd09VPLPM9cukkernOXvVeKnkDvUYtOOtKopHRrqhWtILQAA3mwAAAAAAAAAAAAAAAAAAAAAAAAAAA/UVUVFRcKnJS19n+uYqyOO2XmZI6pMNincvCXsRV6nfPxKnBdwc63Ds34e9dpz9o7Npz6tyzn1PrR0uCltK67ulnaymqf79Rt4Ix7vfYn3XfkvwLLsGrLJeka2mq2xTr/kTYY/Pd1L5ZPbYe1sfKSSekux/nE+eZ+w8rCbbjvR7V9ew3wAOmccAAAAAAAAAAGn1HqO1WGHfrqhOlVMshZxe7y6vFcIYWWwqi5TeiNlVM7pqFa1b7DbkO1Xr622rfp6Ddr6tOHur+rYve7r8E9UIHqrW91ve/BE5aOiXh0UbuLk+87r8ORo7JabjerhHQWukkqqh/JjE5J2qvJE714Hldo9I0k1RwX9n9Puey2d0XUV6TMfu835eJ63693K91PT3CpdJj6jE4MZ4J/2pMdnmy666j6OuuW/brWvFHOb+tmT7iLyT7y+WSwtneyi3WTo7hfejuFwT3mx4zDCvci/WXvXh3dZZp8v2p0ilOTVL1b5yf0O1bmwqj6LHWiX5wNbp2xWrT9vbQ2mjjpoU+thMueva5ear4myAPJynKbcpPVs5bbk9WAAYkAAAAAAAAAAA+JpY4Y1klkZGxvNzlwieYB9gjN219o62ZSpv9G5yc2wOWZc9nuZIjd9tthp8ttttra1yclkVImL58V+Bdq2flXepB/L5m+GNdP1YstQHPN420aoqstoKeht7F5OaxZHp5u4fwkMvGqtR3hHNuV6rahjucayqjP8AamE+B06ejuRP12o/H88S3DZlr9ZpHTd61jpezbyXC90cT2842v33p+63K/Ag98222Sn3mWm21dc9OT5VSJi/NfghQYOtT0exocZty+C+HmXa9mVR9biWDfdrur7jvMpZqe2xL1U8eXY/E7K+mCEXG4V9yn6e4VtRVy/tzSq9fVTFB2KcWmj/AJxSLtdMK/VWgABvNgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABvbPq7UFrRGU9wkfEn+XN+sbjsTPFPLBLbXtSciI252tFXrfTvx/C7/krUF+jaeVRwhN6e3j8zm5Ox8LJ42VrXtXB/Au636901V4R1Y+lcv2Z41b8UynxN9RXK31v/g66mqP+lK13yU5zP1FVFyi4VDq1dJbo/wDSCfw8ziXdEceX/ObXfx8jpYHPNJfb1SYSnu1bGifZSZ2PTODbU2vdUQYRbgkqJ1SQsX44yX6+ktD9eDXg/I5lnRHJXqTT8V5l4GNcK6kt9M6praiOnhbzc92PLvXuKhl2jalfHutkpY1x9ZsPH45QjVzuNfc6jp6+rlqJOpXuzjwTknkRf0kpjH/VFt+3gjLG6J3yl/vkkvZxZO9VbSJZd+lsLFiZyWpkT3l/C3q8V9EK9qJpaiZ008r5ZXrlz3uVVVe9VPMtPZhpjRkcUN41RqG0SyqiPjoHVTEazs6TK8V+7y7c8jx+1NrWSXpLm32JfRfU9Zj4mNs2vSqP1b/PA0ez3ZxeNVPZVSItDa88amRvGROxidfjy+R0HpXTVn0zb0o7TSpEi46SR3GSVe1zuv5J1GMmstHxMaxuo7Q1jURGtbUswidmEU8ZdoGjI/raioV/C5XfJDwWdlZua9HBqPYk/j2nPyLr73po9Owk4IdLtP0LH9a/xr+Gnld8mmFPtd0THncraqb8FM5P5sFCOBlS5Vy8GV1jXP8Ai/AnwKxqNtmlWZSKiu0q9WImInxeayp26ULc+zaeqJOzpKlrPk1TfHZGbLlW/gjYsK9/xLhBRVXtzujs+y2Gji7Olmc/5bpqKvbLrGf/AAvo6m/6VOq/zKpYhsDMlzSXv8tTbHZ175rQ6MByzXbR9bVmel1BUsRf9FrYv5UQ0dbe7zXZ9tu9fU559LUvf81LcOjVz9eaXdq/I3R2VPrkjrK4XuzW/Pt92oKXHNJqhjF+KkfuG0zRNFlHXuOZyfZgjfJnzRMfE5dBcr6NUr15t92i8zfHZUF60mX9cdt2nocpQ2y41Tk5K/djavnlV+BGrltwvMqKlvs1DTIvJZnulVPTdKmBer2JhQ/hr3tliOBRHq1Jjc9puta/KOvUlOxfs08bY8eaJvfEi9fcK+4SdJX11TVP/amlc9fipjA6FePVV6kUu5FmFUIeqtAADcZgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/d127v7q7ucZxwyAfgAAAPpzHNa1zmqiOTLVVOfgfIAAAAAAANlpq0T3y8Q26B6RrJlXPVMoxqJlVNaWRsSoczXC5Ob9VrYGL4+875NN2PX6SxRZc2fjLJyI1vk+fcQjUlrfZb1UWx8zZlhVPfamEVFaipw6uCnnZLfLdbtTW6FUa+d6N3lTO6nWvkmVPfVdX7fqW41SLlr6h26v3UXCfBENxsp6BurWzzyMjbBBJJvPXCJwx8lURhGV26uWvwJrprsy1XH1XL4a+RqNV2j6Cvs9t6fp0jRqo/dxlFai8vM1RuNUXCK86qqq1ZFZBLMjUfu5xGmGouPBM4JtbLNs3SNjH3NlS932pahWLnwTGDJUqyctxpL2s2Rw1k3TVUkop8NX1dXtKxBONo2jqax00dxt0ki0z5OjfG9cqxVRVRUXs4dZpdHaZq9R1ro4ndDTRY6aZUyje5E61MZUTjP0enE1WYF9d/oGtZGhPpjXPe1jGq5zlw1ETKqvYWZcLLs6tUb6KurHrVNTDnpK90jV8GpuovcqGs2S2+31WpauZzXTJSN36ZXpj7WEcqduMeBs/Sy31DVcTf/i5q6FLlHWXY9dO80eptLVun6GjqK2aFZKnKdE3KqzCIvFeS8z70FT2Cou8jdQStZA2JVjR71Yxzs9ap3ZJ3tclsj7SlPWVCpcY036VjOLuK4XPVhcdfZwIrp7SdJWaJr77XSzMexkj6dGKiJhiLxXhxyqKnkbJ0bl+kFqlx/8AS1dgqnN3KUpKK10b15c9SMXr2FbtVfRqOSj6V3Q72c7ueHPj6mGbfStgrNQ3JKSlwxjU3pZXJwjb+a9iE8ZpXQtDVx2ytr1lrnqjcPn3V3l5JhvBPBTTXjzt/ctEilRgXZSdi0im+vgtexFWAlW0TS8Wna2B1JI99JUou5v8XMcmMpnrTimDO0JpCiuVpmvV6mkio2b241rt1FRv1nKvZz5dikLHm7PR9ZjHZ97vePp+5c+zvIOC1KHT+z26VHsVBVOfUKiqiMmdvLjnje4KQjW+n107efY2zLNDIxJInqmF3VVUwveioTZjShHe1TXsMsjZ1tFfpdVKPLVPU0QBIdEaYn1JXPb0iwUsOFmlxlePJqd6/A0wg5y3Y8ypTTO6argtWyPAs6us2ziia+jqK9WztTDntmc9zV/dRW57sFcwxUz7iyF9T0dMsqNWdWKuGZ+tjny44NltLraTa8Tfk4UsdpSkm32Pl39hjgs2gs2zZsbWPubKhy/alqVZ8sIhqdpGkKSxU0Fwt0kns8snRujeu9uqqKqKi9nBeZnLFnGDlqnp2M3W7Ltrqdqkmlz0euhCATLZ1pGDUDZ6yullZSwvRjWx4RXuxlePUiJj1JPRaf2eV9S630cjJapMphtS/eXHPGVwvkTXiTnFS1S17ScfZN10FPVLXlq+fcVMSbQVJpypqKuTUVQyOOKNFiY6RWI9eOeXFVThwTtPnX+m2acucUUEz5aedivjV+N5uFwqLjn1ce82Nv0jRroCov8AWyzNqFjdJC1qojURFwmeHHK/NCK6pxsaa107SMfFtryJRcE3BNtPkReOkSvvPsdsY9zZp1ZTtfz3VXhny5mZqzT1VpytipqqaGZZY99ro8454xxJhsWobfK+sr3Ir66ByMaipwYxyc071w5PBO89Nsk9mkZDCr1ddolTCM+yxeK73V4dZsWOvQOxviWFs6H6B5MmtXy8u8rIEr0bbNKVNOs99u6xTI5USn4sTHarscfLBLX6K0neqCR9iqkZIzgkkcyyNR3UjkVV/I114s7I6xa8eJXo2XdfDeg469mvEqclV2pNLRaKo6iiqVkuz1asib67yL9pFbyRE6l6+HM0lBa6iqv0Voxuzun6F3XurnCr5cfQ3O0SwUGnrjS0tDLO/pId9/SuRV5qmeCJ2KYwi1CUtOHI1U1zjTZY4prlx6m+z2kXBZlm0XYbfYI7tqad/vsa9zFerWs3uTfd4qvEi1+obRcdRQUOkI5pWStRqo7e3d7jlU3uOETmqkzxpwim+b6usyu2dbTBSk1q9NFr+7j7COAs1mkdJWGCJNSXFJKmRM7vSK1qeCN97HevwMLXWiqGgs63qyzPdTt3XPjc7eRWuwiOavmnaZSxLIxb4cOrrNk9kZEK3N6cOLWvFd5X4B+tRXORrUVVVcIidZVOYfgLEtOh7XbrY25asrfZ97GIUfuo3uVear3J8TLrtE6eu1lkr9NVT99iKrER6uY5UTO6qLxRf+eRaWHY17ezrOpHY+Q468NdNdNeOncVgDa6Us777fILc16xtfl0j0TO61Eyq/l5liVendn1pmZQ3GVEqHNRUWWoejsdq7uETzwY1Y8rI72qS9pqxdnW5EHYmlHlq3pxKmBYWu9C0VstMl2tU8nRxYWSKR28mFVEy1fNOZpNC6Tl1FNJNLKtPQwriSRE95y891vl19REsayM9zTiLNm5EL1Rp+5/mpGAWTW27ZnFTSQe3ubKxFTpY5Hvdnu4K1fQgtmtdVeLqy30Dd971XDncEa3rcvYhFlLg0tU9ewwvwp1SjBSUm+x6mAC0HaT0XY0hp77cnSVUifakVieOG8k71U0+0XSFFZqKC52uV7qaR6Mexzt7GUVUVF7OBnPEnGLk9OBvt2TfVW5trhzSfFd5BwTDZ1pODUC1FVXySx0kCo1EYqIr3c1TPUiJj1JLSWXZxXVDKCkma+ok4M3Z5MqvdnhkV4s5xUtUte0ijZdt0FPeST5avTXuKqBaVboHTNpa6tud1qWUiOwjXuamV7MomV8kPSPRukL7bZJLDUvY9vupI2RzkR33mu4/Iz/AEVnLhr2am3/AAmTrutre7NeJVJaWqKCCybKIqF8TUmkdErlVOKSqu85fRFTwINp21yVGr6W1TNRXNqtyVE7GLl3wRS39Zv05JRxUeoqiOONz0kYxXqiqqcM+7xxxU2YtWtc2+HVxLGysXeoum2k9N3V8uPP6FDmTa6OS4XKmoYvrzytjRezK4yTnWGiLfDZXXuwVDpIGM6R0av32qz9pru7vNbsjofatWtnc3LKWJ0ndlfdT5qvkaP08o2qEusorZ1kMmFNi9bTl2G02xtp6SCy22nY1jYI37qY5N91E+Sldkv2qVL6/Wj6aJFkWBjIGNamcuXjhO/LsG3t+h7Ra7ayv1ZcOhV3+S1+6jV7M8Vcvh8TZbXK66W7yRYy8eeZmWOtaKPDXklpw+hXILKvmjLBWacmu+nKhy9Ex0iIkiua9G8VTjxRStSvbTKppPrKGVh2Yskp6ceKa4pgAGoqguHR6JY9mL65U3ZHQy1Pi5co34I0qCJjpJGxsTLnKjUTtVS49o0UlDoBKClje9qdFAu41Vw1vHK9ie6nqXsNbqnPsR3NjJwjbf8A1j8X/wCFNAAonDNjYLLcb5WezW+BZHJxe9Vw1idqqTm3bPrPBVQ013vsb6t6ovs0T2sV3cmfeX0Q3Gm4n2jZitXa4kfWSU7p1VEyqvXr791OruIPs3p6i563p6iVz5ViV080jlyvBFwqr+JUOhGqFbgpLVy8D0FWJTjuqM4b8p6P2JP5ku20VDYbDRULeCyz7yJ91jVT+pDIqlTR2zVqQYZVyMam919K/mvkmcfhQjW12vZNqqmpFXejpI276fecuV+G6Sba5RVdfpynkoonzsinSR7Y03l3VaqI7CdXH4m+UtZ2zjzS0L87HK7Jth60UkvqU+5Vc5XOVVVVyqr1lk7EKdd651apwxHG1fVV/Ird7Hsduva5rk6lTClwbJYVg0W+aNN6SaaR+O1URGonwKmDHW5PsORsOvezE31Jv6fUrbW1ctx1VcKne3m9MsbPwt91PkWLq5iWPZbHQfVkdHFAv4lVHP8Ak4rbS9G6v1PQUkiKu/Ut6RF54Rcu+CKTbbbXJm321ruPvTvT+Fv9RnVLSuyx9fDxNuJNrHyMmXOXDx5/M2Oko26a2bzXZWp7RNEtRlU5qvCNPDl6qVfQJPW3mnRXufPPUN95Vyquc5OPqpaupIpbhsqhbb43S5poHbjEyu63dymO7HwIvss07U1F8ZdKunkipaT3mK9qpvv6sZ545+SGd1blOuuPLQ35uPOy2jHrX7Ul92bnbc9qUNsi+26V7k8ERM/NDM1Yn0DsujoE92R8UcC/id7z/k4juo7hHqjaLQUdO5JKSCZsTVTk5Edl7k9MeSGbttrsy2+2tdyR0708fdb8nGc5r/bYu43XXxf6nIj7Ir5M1Gx+mWbVyTY4U9O9+e9cN/qPPa3VpU6wkiRcpTQsi+G9/USDYpTNjpbncH4RN5saOXqREVzvmhXt8rFuN4rK5c/r5nPTPUirwT0K83uY0V2vU59z9FsyuHXNt+HDyMMs/YzW0j7dXWmR6NqHyLIiZwr2q1EXHhj4lYGfQW+7vq4/YqOs6dHIrFjjciovbnq8TRj2OuaklqUtn5Ese9WRjr7O822uNKVWnarpGq6agldiKXrRf2Xd/wAzV2Gy3G+Vns1vgWRycXuVcNYnaqlpbQpn0+zpIbm5jq2VkLFx1yorVcqejjy0tHLaNl7662w79ZJC+ZVRuVV2VRF78InLuLcsWHptFy01+x1bdlUvLcU2oqO811r2GrtmgLRR1kEV9vUL6iRU3KVj0Zvr2ZVd5fJEM3bVO2OyUFGmEV9Qr0Tua1U/qQiezujqb1rOCqnfJN0D/aZpHrlcp9XK9u9j4mz2nzLdtbUdnidlI9yHh1PeqKvwVpKlH9PLdjpq9DNWV/4+bqr3d5qK62/ziSCiT+z2yZ0qe5NJTK/PXvyrhvmiOT0ILszhfNrWg3c4Yr3uXsRGr/8AwmW2WrZTWKitcXu9LLvbqfsMTGPVU9DVbFKTpLtXVqpwhhSNPFy5/pJsWuRCtdWnmZZEFLaFOPHlBL4cfkee2OZ1TqajoYk3nRwImE/ae5eHwQkG0xzLToGntcap76xU6Y62sTKr/CnqRmByX7a2kiLvRtq8ovVuxJw8l3U9TJ21V3S3ejt7XZSCJZHJ95y/8NT1Ep/sts7XoRO1eiycj+z3V+dxtti1MkNlr69/upLMjMr2MbnP8SlbXmskul6qqxd5zqiZzmp14VeCemELTsEUlHslctMxz5n0kr03UyuXK7j5J8iIbIaOCq1Yr5mo5aendLGi/tZa1F8t5TG2Dcaql1mvJpc68bFXDVa+PlxPSz7Pa2al9tvNZFa6dE3lSTi9E78qiN818iwNHWizWO1TVFsrFqoZffknWRHIu7nljhw4ld7V7hcajU0tDULIymg3egj+y7KfW71Vc/IltVG7TmyZ0EvuTvp9xUXmj5V4p4ojl9DbR6Ouct2PqrmWcH9PRdZ6OH/NPWT56/JdZHNlcC3LWlTdJG/4TXy+D3rj5K4+NWN+ndqLKBPejbLHAv4U4v8Am43mx6GOj07cbrMu610nvL9yNuc/xL6Gl2XNfc9dVFzlT3mslnVfvPXH9SmuMda64f2epXhXrj0UvnOW8+7/AMNrtsrlbT2+2MXCPc6Z6eHBvzd6H1sWtbG0lXeJGosj39BGq9TURFd6qqehFtqNd7brGpa12WUzWwN8uK/xKpONmbpZdn0sVBI1tW10zWKvFGyLxaq+qGVclZltvq+hux7I37VnN8d3XT3cDUXLZ/fLpdqivud2o2pI9XK9u85Ub1JhURERE6smw1hdLPatDrYYLhFV1HQMgY1jkcvDGXLjlyK7uTdQ1lTIyvZcZ5WuVHNkR7sL4Gse1zHqx7Va5FwqKmFQ0SyIw3tyOmvWznz2hCpTVVbTlqm222fJMNk1rZcNTpUTNR0dGzpcLyV+cN/NfIh5Y2xCWNKy6QKqdI+ONzU7kVyL/MhqxIqV0UytsqEZ5laly1+XE2et9H33UN89obX0baNjUbCx7nIrExx4ImMqvXnsMrTsVo0RaKiKuvUEs0jukcxHJnKJjDW5VV8SG66p9VvvtXHUNuM9Msjlh6Nrli3FXhhE4csZIlPDNBJ0c8UkT+e69qtX4lmd6rsclHj2s6N+dDHyJWwqe9q+Mm/l9yxtidBmS4XRzeSJAxfH3nf0kK1ZXLctS19Xnea+dyM/CnBvwRCydLOSw7LX1yruyPiknRfvO4M/pK10pSe3alt1KqZa+oZvJ91FyvwRTC5aV11rr4+JrzIOONj4y5vi/fy+ZZu0N62/ZwyjkX9Y9sEHmmFX+VTH2S19BV6clsrnI2oYr1ezOFex32k9cd3A122uvR09Ba2LlWos708eDfk71IXZ6G+JcYX2ykrEqmuRWOZGqYXvXkiePA223OGRwWui0LOVmujaOsI7yilHQzNY6XrdOVSdIvTUkjlSGZOvuXsUnOyK1LT6enurGs9qq1c2Jz+SNbwTyV2c+CHrtUq2w6LhpK5Y1rqh0fut5I5uFe5O7q8z20vNUybLWLaVVaxlPIxiN+sj0cvLv608UM66YV5D06lqbcbEpx9oS3OSjql1p9ngR6o2d36ur5ay63ai3pHb0kqK5y+ioieWTK2l11rpdJUdho62OpmidG3DXo5Uaxqpl2OS8uBA65t7qZXJWtuEz0XikqPcqepi0NM+qr4KRvB80rY08VXBVd0UnGEefazlyzIRjOumtpz4Nt6sta2t/s/smknX3Zpad0mevel4N9EVvoQPZzTOqtZ25qcmPWVV7Eair+SE12x1bKWw0NqhXdSWTe3U/YYmET1VPQ1OxSj6S8V1aqZSGBI08XLn5NX1N9kdciFa6tPMv5Fann040eUEvN/A9ttlerqygtjXcI2LM9O9VwnyX1NrsdhSm0xV1sq7rZJ3Ln7rWpx9ckC1/XfSGrrhM12WMk6JnZhibvzRV8yfyvSx7IWIi7sktKiJ270q5X0Ry+gqnvZE7HyWpONcrM+7IfKKfw4Gh2TxOuGsK66SN+ox7/Bz3f8AG8afafXrXawqkR2Y6bEDO7d5/wASqTLYxSpDYK2uVq700+6mE4q1jeHxcpBbPYrrqO+vT2eWNJZlfUTPYqNjyuV59fca5xl6CEFzk9StdXZ+hqqitXNtk90+5aPZBK+oXg6lnVqL95XI1PPKepj7FqRIbTX3F+GpJKkaKvYxMqv8XwMbardqaitVNpegcmGNZ0yIv1GNT3Wr3rwXyTtNjA9LFshR/wBWSamVU7VdKvD0R3wLMWlav/wjowlCOSlzVMOPeaTZvTtvmtrhe527zYXOlai9T3uXd9Ez6IbXWOj7/qG+vqX11HHRsTdgYrnZa3r4YxlV58Tx2IPj9lukaKnSb8ar4Ydj8yKavdqWS91cVctwc3pXbjPe6PdyuN1OWMGrWMcdOS11ZV3qobPg7IuW823o9OOvWTuGG1aN0fXUM10imqJWSOVu8iOc9W7qI1uc44IU+fcsckT1ZKxzHJ1OTCnwU7rvSaJLRI5Gbl/qN2KjuqK0SAANBRPWknfTVUVTGjVfE9r2o5MplFymSartPvmOFFbs9u4//wDIgoNld06/VehZoy7sdNVS01NxqbUVdqCaKWujpmLEio3oo93n2quVXl2mnAMZScnq+ZpssnbJzm9WyV6R1vcLBS+xLAyrpEVVYxzt1zM88Lx4d2DZz7SpmMk+jLJR0cknFz1dv5XtXCNyviQEG2OTbGO6mW69p5VcFCM+C7vnzPevq6iurJayqkWSaVyue5etSYac2iV9roI6Kqo2VscTd2N3SKx6InJFXC5x4EIBhC6db3oviaaMu6ibnXLRs3WrdRVWo65lTUxRQtibuxsYnJM54r1qZ2jtZ1unaeSlSnZVUrlVzWOduqx3ai8eHcRcEq6anvp8SY5l8bfTKX7u03VNqKrg1SuoUgp1qFe5/R7mGcWq1eCdy8+0xdQXervdzfX1qt6RyIiNYmGtROSIa8GLsk1o3w5mEsiyUXBvg3r7+0lWkNbXCwU/sboW1lGiqrY3O3VYq8913Hh3YPTU2vrreKd9LAxtDTPTD2xuVXuTsV3Dh4IhEQZ/qLd3c14G5bQyVV6FTe7+dfMz7Bc5rNdoLlTxxySw53WyIqtXKKnV4n7qG71V8uklwrEYkj0RqNYio1qJyRMmvBr35bu7rwK/pp+j9Hr+3XXT2m8tWp7jbdP1VmpWwtiqXK50itXfTeREVE445IaMASnKSSb5Cds5pKT1S5HpTTPp6iOeNUR8b0e3KZ4ouULAbtTrEpUatogWfHF/Sru/7cZ+JXYM67p1a7j0N2Pm342vopaam01FfblfqtKi4TI7d4RxtTDGJ3J+fM2+ltc3OxUjaLooqqlYq7jH5RzMrlURU6vFFIoCI3TjLfT4kQy74WO2MnvPrJ9PtLqWxPbb7NSUj38XPV29x7cIicfEh9NdauG+MvDnNmqmzdMqyJlHOznjj8jBBM77J6bz5E3Z19zTnLXTkbbVF+rdQXBKysSNitYjGMjRUa1PM9dN6muFgpqyGhbD/emoiueiqrFTOFTjz49ZpAY+knvb+vEwWTarPSqX7u02em71U2K6tuFNHFLIjVbuyIqoqL4KeF6uVTd7pPcKtW9LM7Ko1OCIiYRE7kRDDBG/Ld3deBg7puv0ev7dddPaTHS2va6yWtLe+kiq4o0XoVV6tVmVzheeU/7yR+1Xmttd3+lKJzI5lc5Vbu+6qLzaqdhrgZu6bSTfLkbZZl8lBOXq8vYWIm05XsY6psFPLOzi1/TYRF7URWqqepHNWatuWomRw1DYoaeN282KNF4ryyqrzXmR4GU8m2a0kzbdtLKuhuTnw930N5TanuVNpmWwQpC2mkVd5+6u/hV4pnOML4HxpfUVdp2eeaijge6Zm47pWquMclTCoaYGHpZpp68jQsm5SjJS4x4L2H3PLJPPJNK5XySOVz3LzVVXKqbjSmpbhp2pfJS7skMmOlhf9V2OvuXvNIDGM5Re8nxMK7Z1TU4PRlh1G1KtczFPaaeN3a+VXp6IiEHu9wqbpcZq+scjp5ly5UTCcsIiJ4IhiAzsvss4SepvyM7IyUlbLVAzbLc6y0XGOvoZNyaPtTKOTrRU60MIGtNp6orRk4SUovRosePapOkOJLLG6XH1m1Co303V+ZDtUX+t1DXpV1iRt3G7kbGJhGpnPmakG2zItsWknwLeRtHJyIblk9V7jf3PVVxr9O01jeyGOmga1qqxFRz0amG54+fia2x3Ke0XWC40zWOlhcqtR6ZRcoqLnyUwgYOyTak3xRolkWympuXFaae7kbO43utrr/8ATUys9pSRsjURPdbu43URF6uCEuftSuC026y10zZ8fXV7lbn8P/yV8DOF9kNd18zdVn5FLk4T03uZmXi5113rXVlfO6aV3DK8EanYidSG00jqu4acc9lO1k9NIu8+GTOM9qL1KR8GEbJRlvJ8TTDIthZ6WMnvdpY1TtTqXQqlNZ4opMcHSTq9PRET5kGiudUy9tvC7j6pKj2hd5vuq/e3uSdWTCBnZfZZpvPkbb8/IyGnZLXTl+I2upr7Xagr0rK3o2uaxGMZGio1qd2VXtMnTWqbhp+jq6ehjgzUYXpHtVXMVEVMpxx19ZoQYK2alv68TWsm1WelUv3dp+uVXOVzlVVVcqq9ZvL9qm43i10ltqGwx09MjcJG1UV6omEVcr2dnaaIEKckmk+ZhC2cIuMXwfMlmkNcVmn6P2FaSKqpUcrmt3txzVXnxwvyNnd9p1wqIHRW6hjonOTHSOf0jk8OCInnkgANscq2Md1S4FuG08qFfo4z0X518z7mlknmfNNI6SR6q5znLlVVetVN3ftU3K8Wults7IIqenRuGxNVN5UTCKuVXqNCDUpySaT5lSN04qUU+D5+02Wnr1XWK4JW0L0R+N17HJlr29ioTZNqk3RYWyxrJ+17QuPTd/MrcGyvIsrWkWWMfaGTjR3apaL87TaamvlZqC5e21iRtcjEYxkaYRrUVVx2rzU1YBqlJyerK1lkrJOUnq2AAQYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH//Z" alt="GDS France">
+      <div class="cover-logo-text">
+        <div class="name"><span>GDS</span> France</div>
+        <div class="tag">L'action sanitaire ensemble</div>
+      </div>
+    </div>
+    <div class="cover-badge">🐝 Section Apicole</div>
+    <h1>Livret d'Accueil<span>GDS France</span></h1>
+    <p class="subtitle">Bienvenue dans le réseau sanitaire apicole. Ce guide vous accompagne pour comprendre l'organisation, les missions et les outils de notre filière.</p>
+    <div class="cover-pills">
+      <span>🏛️ Réseau National</span>
+      <span>🌿 Santé Apicole</span>
+      <span>🤝 Action Collective</span>
+      <span>📋 Référence 2025</span>
+    </div>
+  </div>
+  <div class="cover-bottom">
+    <strong>GDS France</strong><span>|</span>
+    <span>Groupements de Défense Sanitaire</span><span>|</span>
+    <span>L'action sanitaire ensemble</span>
+  </div>
+</section>
+
+<div class="accent-band"></div>
+
+<!-- ═══════════════ MOT DU PRÉSIDENT -->
+<section class="alt" id="president" style="padding: 4.5rem 6rem;">
+  <div class="section-tag tag-violet">🎙️ Mot du Président</div>
+  <h2 class="section-title">Un message de <em class="v">bienvenue</em></h2>
+  <div class="divider dv"></div>
+  <div class="president-block">
+    <div class="pres-avatar">
+      <div class="person-photo"></div>
+      <div class="name">Gwenaël Delamarche</div>
+      <div class="name">Président</div>
+      <div class="title">Commission Apicole<br>GDS France</div>
+    </div>
+    <div class="pres-quote">
+      Ce livret d'accueil a été conçu pour vous, nouveaux collaborateurs, élus et techniciens qui rejoignez le réseau GDS dans sa dimension apicole. Notre mission collective est de défendre la santé des colonies d'abeilles, en lien étroit avec les éleveurs, les vétérinaires et l'ensemble des acteurs de la filière. Vous trouverez ici les repères essentiels pour prendre vos marques, comprendre nos engagements et vous inscrire pleinement dans cette action sanitaire commune.
+    </div>
+  </div>
+  <div class="stats-row" style="margin-top:2.5rem;">
+    <div class="stat-box sb-v"><div class="number">101</div><div class="label">GDS Départementaux</div></div>
+    <div class="stat-box sb-b"><div class="number">18</div><div class="label">FRGDS Régionales</div></div>
+    <div class="stat-box sb-g"><div class="number">+70k</div><div class="label">Apiculteurs concernés</div></div>
+    <div class="stat-box sb-l"><div class="number">Multi</div><div class="label">Espèces &amp; Filières</div></div>
+  </div>
+</section>
+
+<!-- ═══════════════ PARTIE I — RÉSEAU GDS -->
+<section id="reseau" style="background:#fff; padding: 5rem 6rem;">
+  <div class="section-tag tag-violet">Partie I</div>
+  <h2 class="section-title">Présentation du réseau <em class="v">GDS multi-espèces</em></h2>
+  <div class="divider dv"></div>
+  <p class="section-lead">Les Groupements de Défense Sanitaire sont nés d'une volonté mutualiste des éleveurs pour assurer collectivement la surveillance et la prévention des maladies animales.</p>
+  <div class="two-col">
+    <div>
+      <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1.4rem; color:var(--violet);">📅 Historique du réseau</h3>
+      <div class="timeline">
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--violet);">50s</div>
+          <h4>Années 1950 — Naissance des GDS</h4>
+          <p>Création des premiers groupements suite à la reconstruction agricole d'après-guerre. Face aux épizooties, les éleveurs s'organisent collectivement.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--bleu);">66</div>
+          <h4>1966 — Reconnaissance juridique</h4>
+          <p>La loi agricole encadre officiellement les GDS, leur conférant un statut et des missions définies dans la lutte contre les maladies réglementées.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#5a90c0;">90s</div>
+          <h4>Années 1990 — Structuration nationale</h4>
+          <p>Création de GDS France pour fédérer les structures régionales et départementales, renforçant la cohérence des politiques sanitaires nationales.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:var(--vert);">12</div>
+          <h4>2012 — Loi de Santé Animale &amp; OVS</h4>
+          <p>Les FRGDS obtiennent la reconnaissance comme Organismes à Vocation Sanitaire (OVS), avec délégation de missions de service public.</p>
+        </div>
+        <div class="tl-item">
+          <div class="tl-dot" style="background:#888;">auj</div>
+          <h4>Aujourd'hui — Extension Apicole</h4>
+          <p>Structuration renforcée de la filière apicole au sein du réseau multi-espèces GDS.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1.2rem; color:var(--bleu);">🏛️ Rôle des OVS</h3>
+      <div class="callout co-b">
+        <div class="callout-icon">ℹ️</div>
+        <p><strong>Organismes à Vocation Sanitaire</strong>Les FRGDS, reconnues OVS par arrêté préfectoral, exercent par délégation des missions réglementaires de surveillance, de prévention et de lutte contre les maladies animales.</p>
+      </div>
+      <div class="grid-2" style="margin-top:1.2rem; gap:0.9rem;">
+        <div class="card"><div class="card-icon ci-v">🔬</div><h3>Surveillance</h3><p>Veille épidémiologique, collecte et analyse de données sanitaires.</p></div>
+        <div class="card"><div class="card-icon ci-b">🛡️</div><h3>Prévention</h3><p>Programmes de prophylaxie, audits, formation des éleveurs.</p></div>
+        <div class="card"><div class="card-icon ci-g">⚡</div><h3>Intervention</h3><p>Mobilisation rapide lors de foyers, coordination avec les autorités.</p></div>
+        <div class="card"><div class="card-icon ci-v">📊</div><h3>Reporting</h3><p>Transmission des données aux DDPP, DRAAF et DGAL.</p></div>
+      </div>
+      <h3 style="font-size:1rem; font-weight:700; margin:1.5rem 0 0.8rem;">⚙️ Valeurs fondamentales</h3>
+      <div style="display:flex; flex-direction:column; gap:0.5rem;">
+        <div style="display:flex; gap:0.7rem; align-items:center; padding:0.7rem; background:var(--violet-light); border-radius:8px;"><span style="font-size:1.2rem;">🤝</span><span style="font-size:0.86rem; font-weight:600;">Mutualisme &amp; Solidarité entre éleveurs</span></div>
+        <div style="display:flex; gap:0.7rem; align-items:center; padding:0.7rem; background:var(--bleu-light); border-radius:8px;"><span style="font-size:1.2rem;">🔍</span><span style="font-size:0.86rem; font-weight:600;">Transparence &amp; Rigueur scientifique</span></div>
+        <div style="display:flex; gap:0.7rem; align-items:center; padding:0.7rem; background:var(--vert-light); border-radius:8px;"><span style="font-size:1.2rem;">🌱</span><span style="font-size:0.86rem; font-weight:600;">Proximité terrain &amp; Service au secteur</span></div>
+        <div style="display:flex; gap:0.7rem; align-items:center; padding:0.7rem; background:#fff3e8; border-radius:8px;"><span style="font-size:1.2rem;">⚖️</span><span style="font-size:0.86rem; font-weight:600;">Démocratie sanitaire &amp; Concertation</span></div>
+      </div>
+    </div>
+  </div>
+  <!-- Organigramme -->
+  <div style="margin-top:3.5rem;">
+    <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1.4rem;">📐 Structuration du réseau</h3>
+    <div class="org-chart">
+      <div class="org-lbl">Échelon National</div>
+      <div class="org-level"><div class="org-node on-nat">🏛️ GDS France<br><small style="font-weight:400;opacity:0.8;">Fédération nationale — Paris</small></div></div>
+      <div class="org-arrow">↓</div>
+      <div class="org-lbl">Échelon Régional — 18 FRGDS</div>
+      <div class="org-level">
+        <div class="org-node on-reg">FRGDS Île-de-France</div>
+        <div class="org-node on-reg">FRGDS Auvergne-RhA</div>
+        <div class="org-node on-reg">FRGDS Nouvelle-Aquitaine</div>
+        <div class="org-node on-reg">FRGDS Occitanie</div>
+        <div class="org-node on-reg" style="background:#5090b0;">… (14 autres)</div>
+      </div>
+      <div class="org-arrow">↓</div>
+      <div class="org-lbl">Échelon Départemental — ~101 GDS</div>
+      <div class="org-level" style="flex-wrap:wrap; gap:5px;">
+        <div class="org-node on-dep" style="min-width:72px;padding:0.45rem 0.7rem;font-size:0.75rem;">GDS 01</div>
+        <div class="org-node on-dep" style="min-width:72px;padding:0.45rem 0.7rem;font-size:0.75rem;">GDS 02</div>
+        <div class="org-node on-dep" style="min-width:72px;padding:0.45rem 0.7rem;font-size:0.75rem;">GDS 44</div>
+        <div class="org-node on-dep" style="min-width:72px;padding:0.45rem 0.7rem;font-size:0.75rem;">GDS 33</div>
+        <div class="org-node on-dep" style="min-width:72px;padding:0.45rem 0.7rem;font-size:0.75rem;">GDS 31</div>
+        <div class="org-node on-dep" style="min-width:72px;padding:0.45rem 0.7rem;font-size:0.75rem;">GDS 13</div>
+        <div class="org-node on-dep" style="min-width:72px;padding:0.45rem 0.7rem;font-size:0.75rem;background:#aaa;">…</div>
+        <div class="org-node on-dep" style="min-width:72px;padding:0.45rem 0.7rem;font-size:0.75rem;background:#4a9020;">GDSA</div>
+      </div>
+      <p style="text-align:center; font-size:0.73rem; color:#888; margin-top:0.8rem;">* GDSA : structures entièrement dédiées à l'apiculture</p>
+    </div>
+  </div>
+  <!-- Instances -->
+  <div style="margin-top:3.5rem;">
+    <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1.2rem;">🗳️ Instances décisionnelles</h3>
+    <div class="grid-3">
+      <div class="card"><div class="card-icon ci-v">🏛️</div><h3>Conseil d'Administration</h3><p>Instance souveraine élue par les membres. Définit les orientations stratégiques, vote le budget et les programmes d'action.</p></div>
+      <div class="card"><div class="card-icon ci-b">⚡</div><h3>Bureau</h3><p>Émanation du CA, assure la gestion courante. Composé du Président, Vice-présidents, Trésorier et Secrétaire.</p></div>
+      <div class="card"><div class="card-icon ci-g">🐝</div><h3>Commissions filières</h3><p>Espaces techniques dédiés à chaque espèce (apicole, bovin, ovin…). Formulent avis et propositions au CA.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PARTIE II — FILIÈRE APICOLE -->
+<section class="alt" id="filiere" style="padding: 5rem 6rem;">
+  <div class="section-tag tag-vert">Partie II</div>
+  <h2 class="section-title">Organisation de la filière <em class="g">sanitaire apicole</em></h2>
+  <div class="divider dg"></div>
+  <p class="section-lead">La filière apicole bénéficie d'une organisation spécifique au sein du réseau GDS, avec des interlocuteurs dédiés à chaque niveau territorial.</p>
+
+  <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1.2rem;">🚨 Grands enjeux sanitaires apicoles</h3>
+  <div class="enjeux-grid">
+    <div class="enjeu-card" style="background:linear-gradient(135deg,var(--violet),#7a1d62)"><div class="icon">🪲</div><h3>Varroa destructor</h3><p>Parasite majeur, responsable de dépérissements massifs. Lutte obligatoire et coordonnée via les PSIC.</p><div class="bg-num">01</div></div>
+    <div class="enjeu-card" style="background:linear-gradient(135deg,var(--bleu),#005a8e)"><div class="icon">🦠</div><h3>Loque américaine</h3><p>Maladie bactérienne réglementée très contagieuse. Protocoles stricts de déclaration et d'intervention.</p><div class="bg-num">02</div></div>
+    <div class="enjeu-card" style="background:linear-gradient(135deg,var(--vert),#3a8020)"><div class="icon">🐝</div><h3>Frelon asiatique</h3><p>Prédateur invasif causant des pertes importantes de butineuses. Plan national de lutte coordonné.</p><div class="bg-num">03</div></div>
+    <div class="enjeu-card" style="background:linear-gradient(135deg,#e08020,#b05010)"><div class="icon">🪲</div><h3>Aethina tumida</h3><p>Petit coléoptère exotique sous surveillance renforcée aux frontières du territoire.</p><div class="bg-num">04</div></div>
+    <div class="enjeu-card" style="background:linear-gradient(135deg,#6a3090,#4a1870)"><div class="icon">🌿</div><h3>Pesticides &amp; Environnement</h3><p>Intoxications chroniques et aiguës, perte d'habitats mellifères. Dialogue avec la filière agricole.</p><div class="bg-num">05</div></div>
+    <div class="enjeu-card" style="background:linear-gradient(135deg,#2a7a6a,#1a5a4a)"><div class="icon">🌡️</div><h3>Changement climatique</h3><p>Perturbations des cycles floraux, hivers doux favorisant le Varroa, sécheresses estivales.</p><div class="bg-num">06</div></div>
+  </div>
+
+  <!-- Acteurs -->
+  <div style="margin-top:3rem;">
+    <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1.2rem;">👥 Rôles et responsabilités des acteurs</h3>
+    <div class="grid-3">
+      <div class="card" style="border-top:4px solid var(--violet)"><div style="font-size:1.8rem;margin-bottom:0.7rem">🗳️</div><h3 style="color:var(--violet)">Élus apicoles</h3><ul style="list-style:none;font-size:0.85rem;color:#555;line-height:1.8"><li>→ Portage politique des dossiers sanitaires</li><li>→ Représentation en CA et commissions</li><li>→ Lien avec les apiculteurs du territoire</li><li>→ Vote des budgets programmes</li></ul></div>
+      <div class="card" style="border-top:4px solid var(--bleu)"><div style="font-size:1.8rem;margin-bottom:0.7rem">📋</div><h3 style="color:var(--bleu)">Référents apicoles</h3><ul style="list-style:none;font-size:0.85rem;color:#555;line-height:1.8"><li>→ Coordination technique régionale</li><li>→ Suivi des PSIC et programmes</li><li>→ Interface GDS / apiculteurs / DDPP</li><li>→ Animation du réseau terrain</li></ul></div>
+      <div class="card" style="border-top:4px solid var(--vert)"><div style="font-size:1.8rem;margin-bottom:0.7rem">🏢</div><h3 style="color:var(--vert)">Directeurs GDS</h3><ul style="list-style:none;font-size:0.85rem;color:#555;line-height:1.8"><li>→ Management et coordination générale</li><li>→ Gestion administrative et financière</li><li>→ Représentation institutionnelle</li><li>→ Arbitrage des dossiers complexes</li></ul></div>
+    </div>
+  </div>
+
+  <!-- Structuration 3 niveaux -->
+  <div style="margin-top:3rem;">
+    <h3 style="font-size:1.2rem; font-weight:700; margin-bottom:1.5rem;">🗺️ Structuration à trois niveaux</h3>
+    <div style="background:#fff;border-radius:18px;padding:1.8rem;box-shadow:0 4px 18px rgba(0,0,0,0.06);margin-bottom:1.2rem;border-left:6px solid var(--violet)">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.8rem"><span style="background:var(--violet);color:#fff;padding:3px 12px;border-radius:20px;font-size:0.75rem;font-weight:700">NATIONAL</span><h4 style="font-size:1rem;font-weight:700">Section apicole de GDS France</h4></div>
+      <div class="grid-3" style="gap:0.8rem">
+        <div style="background:var(--violet-light);border-radius:8px;padding:0.8rem"><strong style="font-size:0.82rem;color:var(--violet);display:block;margin-bottom:2px">🏛️ Commission apicole</strong><span style="font-size:0.76rem;color:#555">Organe technique de réflexion et proposition au niveau national</span></div>
+        <div style="background:var(--violet-light);border-radius:8px;padding:0.8rem"><strong style="font-size:0.82rem;color:var(--violet);display:block;margin-bottom:2px">🔄 Groupe référents régionaux</strong><span style="font-size:0.76rem;color:#555">Coordination et partage d'expériences entre régions</span></div>
+        <div style="background:var(--violet-light);border-radius:8px;padding:0.8rem"><strong style="font-size:0.82rem;color:var(--violet);display:block;margin-bottom:2px">🔬 Groupes de travail</strong><span style="font-size:0.76rem;color:#555">PSIC, GT internes, transversal filières, veille réglementaire…</span></div>
+      </div>
+    </div>
+    <div style="background:#fff;border-radius:18px;padding:1.8rem;box-shadow:0 4px 18px rgba(0,0,0,0.06);margin-bottom:1.2rem;border-left:6px solid var(--bleu)">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.8rem"><span style="background:var(--bleu);color:#fff;padding:3px 12px;border-radius:20px;font-size:0.75rem;font-weight:700">RÉGIONAL</span><h4 style="font-size:1rem;font-weight:700">Sections apicoles régionales (FRGDS)</h4></div>
+      <p style="font-size:0.86rem;color:#555;line-height:1.6">Les sections apicoles régionales animent et coordonnent l'action sanitaire apicole sur leur territoire, en lien avec les GDS départementaux, les DRAAF et les partenaires locaux.</p>
+    </div>
+    <div style="background:#fff;border-radius:18px;padding:1.8rem;box-shadow:0 4px 18px rgba(0,0,0,0.06);border-left:6px solid var(--vert)">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:0.8rem"><span style="background:var(--vert);color:#fff;padding:3px 12px;border-radius:20px;font-size:0.75rem;font-weight:700">DÉPARTEMENTAL</span><h4 style="font-size:1rem;font-weight:700">Sections apicoles départementales (GDS &amp; GDSA)</h4></div>
+      <p style="font-size:0.86rem;color:#555;line-height:1.6;margin-bottom:0.8rem">Premier maillon de contact avec les apiculteurs. Les <strong>GDSA</strong> coexistent avec les sections apicoles des GDS multi-espèces selon les territoires.</p>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap"><div style="background:var(--vert-light);padding:0.6rem 1rem;border-radius:8px;font-size:0.78rem;font-weight:600;color:#3a8020">🌿 GDS multi-espèces avec section apicole</div><div style="background:#fff3e8;padding:0.6rem 1rem;border-radius:8px;font-size:0.78rem;font-weight:600;color:#c06010">🐝 GDSA spécialisés apiculture</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ PARTIE III — PROGRAMMES -->
+<section id="programmes" style="background:#fff; padding: 5rem 6rem;">
+  <div class="section-tag tag-bleu">Partie III</div>
+  <h2 class="section-title">Dossiers techniques &amp; <em class="b">financement</em></h2>
+  <div class="divider db"></div>
+  <p class="section-lead">Les sections apicoles GDS s'appuient sur une architecture de programmes sanitaires financés par l'Europe, l'État et les professionnels.</p>
+
+  <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:1.2rem">📋 Programmes Sanitaires Apicoles</h3>
+  <div class="grid-2" style="gap:1.2rem;margin-bottom:2.5rem">
+    <div class="program-card">
+      <div class="program-header" style="background:linear-gradient(135deg,#003f7f,var(--bleu))"><div class="acronym">PAE</div><h3>Plan Apicole Européen</h3><p style="font-size:0.82rem;opacity:0.85;margin-top:3px">Financement FEAGA — Union Européenne</p></div>
+      <div class="program-body"><ul><li>Surveillance et lutte contre les maladies des abeilles</li><li>Modernisation des ruchers et équipements</li><li>Repeuplement du cheptel apicole</li><li>Coopération avec organismes spécialisés</li><li>Recherches appliquées et mesures de terrain</li></ul></div>
+    </div>
+    <div class="program-card">
+      <div class="program-header" style="background:linear-gradient(135deg,#6a0060,var(--violet))"><div class="acronym">PSA</div><h3>Plan Sanitaire Apicole</h3><p style="font-size:0.82rem;opacity:0.85;margin-top:3px">Accord tripartite ADA — GTV — GDS</p></div>
+      <div class="program-body"><ul><li>Actions sanitaires coordonnées sur le territoire</li><li>Suivi épidémiologique des colonies</li><li>Formation et information des apiculteurs</li><li>Visites sanitaires apicoles (VSA)</li><li>Cofinancement État / interprofession / GDS</li></ul></div>
+    </div>
+  </div>
+
+  <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:1.2rem">🔬 Programmes Sanitaires d'Intérêt Collectif (PSIC)</h3>
+  <div class="grid-3" style="gap:1.2rem;margin-bottom:2.5rem">
+    <div style="background:linear-gradient(160deg,var(--violet-light),#fff);border-radius:14px;padding:1.6rem;border:1px solid rgba(161,40,133,0.12)"><div style="font-size:2.2rem;margin-bottom:0.8rem">🦠</div><h4 style="font-size:0.95rem;font-weight:700;color:var(--violet);margin-bottom:0.5rem">Loque américaine</h4><p style="font-size:0.82rem;color:#555;line-height:1.6">Maladie réglementée — déclaration obligatoire. Protocoles d'intervention : destruction des colonies atteintes, surveillance du périmètre, désinfection.</p><div style="margin-top:0.8rem;display:inline-block;background:var(--violet);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.72rem;font-weight:700">MDO — MALADIE RÉGLEMENTÉE</div></div>
+    <div style="background:linear-gradient(160deg,var(--bleu-light),#fff);border-radius:14px;padding:1.6rem;border:1px solid rgba(0,123,195,0.12)"><div style="font-size:2.2rem;margin-bottom:0.8rem">🪲</div><h4 style="font-size:0.95rem;font-weight:700;color:var(--bleu);margin-bottom:0.5rem">Varroa destructor</h4><p style="font-size:0.82rem;color:#555;line-height:1.6">Plans de traitement coordonnés, suivi des résistances aux acaricides, promotion des méthodes biotechniques. Traitements : AO, AF.</p><div style="margin-top:0.8rem;display:inline-block;background:var(--bleu);color:#fff;padding:3px 10px;border-radius:20px;font-size:0.72rem;font-weight:700">SURVEILLANCE NATIONALE</div></div>
+    <div style="background:linear-gradient(160deg,#fff3e8,#fff);border-radius:14px;padding:1.6rem;border:1px solid rgba(200,100,20,0.12)"><div style="font-size:2.2rem;margin-bottom:0.8rem">🪲</div><h4 style="font-size:0.95rem;font-weight:700;color:#b06010;margin-bottom:0.5rem">Aethina tumida (AT)</h4><p style="font-size:0.82rem;color:#555;line-height:1.6">Petit coléoptère exotique envahissant. Surveillance renforcée aux points d'entrée du territoire, alertes et protocoles d'intervention.</p><div style="margin-top:0.8rem;display:inline-block;background:#b06010;color:#fff;padding:3px 10px;border-radius:20px;font-size:0.72rem;font-weight:700">ESPÈCE EXOTIQUE</div></div>
+  </div>
+
+  <div class="grid-2" style="gap:1.2rem;margin-bottom:2.5rem">
+    <div class="card" style="border-top:4px solid #d4a020"><div style="font-size:1.8rem;margin-bottom:0.7rem">🐝</div><h3 style="color:#9a7010">Plan national Frelon à pattes jaunes</h3><p style="font-size:0.85rem;color:#555;line-height:1.6;margin-bottom:0.8rem">Coordination nationale contre <em>Vespa velutina</em>. Réseau de piégeage, cartographie des nids, formation aux méthodes de destruction sécurisées.</p></div>
+    <div class="card" style="border-top:4px solid var(--vert)"><div style="font-size:1.8rem;margin-bottom:0.7rem">📊</div><h3 style="color:#3a8020">OMAA</h3><p style="font-size:0.85rem;color:#555;line-height:1.6">Observatoire des Mortalités et des Affaiblissements de l'Abeille. Réseau de surveillance des pertes de colonies, analyses en laboratoire, rapports aux autorités.</p></div>
+    <div class="card" style="border-top:4px solid var(--bleu)"><div style="font-size:1.8rem;margin-bottom:0.7rem">💻</div><h3 style="color:var(--bleu)">Plateforme ESA</h3><p style="font-size:0.85rem;color:#555;line-height:1.6">Épidémiosurveillance en Santé Animale. Remontée d'informations sanitaires, alertes précoces, tableaux de bord partagés.</p></div>
+    <div class="card" style="border-top:4px solid var(--violet)"><div style="font-size:1.8rem;margin-bottom:0.7rem">📋</div><h3 style="color:var(--violet)">Plan Sanitaire d'Élevage (PSE)</h3><p style="font-size:0.85rem;color:#555;line-height:1.6">Outil structurant de la relation vétérinaire-éleveur. Définit les protocoles de soins, actes délégués et suivi sanitaire des ruchers.</p></div>
+  </div>
+
+  <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:1.2rem">💰 Modèle de financement</h3>
+  <div style="background:#fff;border-radius:18px;padding:2rem;box-shadow:0 4px 18px rgba(0,0,0,0.06)">
+    <div class="fin-bar-row"><div class="fin-label">🇪🇺 Fonds UE (PAE / FEAGA)</div><div class="fin-bar-track"><div class="fin-bar-fill" style="width:35%;background:var(--bleu)">35%</div></div><div class="fin-percent" style="color:var(--bleu)">35%</div></div>
+    <div class="fin-bar-row"><div class="fin-label">🇫🇷 État / FranceAgriMer</div><div class="fin-bar-track"><div class="fin-bar-fill" style="width:25%;background:var(--violet)">25%</div></div><div class="fin-percent" style="color:var(--violet)">25%</div></div>
+    <div class="fin-bar-row"><div class="fin-label">🌱 Cotisations éleveurs</div><div class="fin-bar-track"><div class="fin-bar-fill" style="width:20%;background:var(--vert)">20%</div></div><div class="fin-percent" style="color:var(--vert)">20%</div></div>
+    <div class="fin-bar-row"><div class="fin-label">🏛️ Collectivités / Régions</div><div class="fin-bar-track"><div class="fin-bar-fill" style="width:12%;background:#e08020">12%</div></div><div class="fin-percent" style="color:#e08020">12%</div></div>
+    <div class="fin-bar-row"><div class="fin-label">📋 Autres (PSA, PSE…)</div><div class="fin-bar-track"><div class="fin-bar-fill" style="width:8%;background:#888">8%</div></div><div class="fin-percent" style="color:#888">8%</div></div>
+    <div class="callout co-g" style="margin-top:1.2rem;margin-bottom:0"><div class="callout-icon">💡</div><p>Ces pourcentages sont indicatifs et varient selon les régions, les programmes actifs et les années. Se référer au budget annuel voté en CA pour les chiffres précis.</p></div>
+  </div>
+</section>
+
+<!-- ═══════════════ PARTIE IV — PARTENAIRES -->
+<section class="alt" id="partenaires" style="padding: 5rem 6rem;">
+  <div class="section-tag tag-violet">Partie IV</div>
+  <h2 class="section-title">Partenaires <em class="v">du réseau GDS</em></h2>
+  <div class="divider dv"></div>
+  <p class="section-lead">Le réseau GDS s'inscrit dans un écosystème riche de partenaires institutionnels, scientifiques, techniques et professionnels.</p>
+
+  <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.2rem;color:var(--violet)">🏛️ Partenaires institutionnels</h3>
+  <div class="grid-4" style="margin-bottom:2.5rem">
+    <div class="partner-card pc-v"><div class="icon">🏛️</div><h4>DGAL</h4><p>Direction Générale de l'Alimentation — tutelle nationale, réglementation sanitaire vétérinaire</p></div>
+    <div class="partner-card pc-v"><div class="icon">🌾</div><h4>DRAAF</h4><p>Direction Régionale — politique agricole et sanitaire en région</p></div>
+    <div class="partner-card pc-v"><div class="icon">🔎</div><h4>DDPP</h4><p>Direction Départementale — contrôles terrain, gestion des foyers, lien avec GDS locaux</p></div>
+    <div class="partner-card pc-v"><div class="icon">🌐</div><h4>FranceAgriMer</h4><p>Gestion des aides européennes PAE, comité sectoriel apicole</p></div>
+  </div>
+
+  <div class="callout co-b" style="margin-bottom:2.5rem">
+    <div class="callout-icon">🗳️</div>
+    <p><strong>Démocratie Sanitaire — Instances de concertation</strong>Le réseau GDS participe au Consortium national, au CNOPSAV, aux CROPSAV régionaux, aux Assises du Sanitaire et aux différentes instances de dialogue avec l'État et les filières.</p>
+  </div>
+
+  <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.2rem;color:var(--bleu)">🔬 Partenaires scientifiques &amp; techniques</h3>
+  <div class="grid-4" style="margin-bottom:2.5rem">
+    <div class="partner-card pc-b"><div class="icon">🧪</div><h4>ANSES</h4><p>Évaluation des risques, laboratoires de référence, AMM médicaments vétérinaires</p></div>
+    <div class="partner-card pc-b"><div class="icon">🌿</div><h4>INRAE</h4><p>Recherche fondamentale et appliquée sur les pathologies apicoles</p></div>
+    <div class="partner-card pc-b"><div class="icon">🐝</div><h4>ITSAP</h4><p>Institut Technique et Scientifique — référence nationale pour la filière apicole</p></div>
+    <div class="partner-card pc-b"><div class="icon">📊</div><h4>Plateforme ESA</h4><p>Épidémiosurveillance, réseau multi-acteurs, collecte et analyse des données</p></div>
+  </div>
+
+  <div class="grid-2" style="gap:2rem;margin-bottom:2.5rem">
+    <div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1rem;color:var(--vert)">🐝 Organismes apicoles</h3>
+      <div class="card pc-g" style="box-shadow:none">
+        <div style="display:flex;gap:1rem;align-items:flex-start;margin-bottom:0.9rem"><span style="font-size:1.6rem">🌿</span><div><h4 style="font-size:0.92rem;margin-bottom:3px">ADA — Associations pour le Développement de l'Apiculture</h4><p style="font-size:0.8rem;color:#555;line-height:1.5">Partenaires techniques régionaux, formations, appui aux apiculteurs, co-signataires des PSA</p></div></div>
+        <div style="display:flex;gap:1rem;align-items:flex-start"><span style="font-size:1.6rem">🔬</span><div><h4 style="font-size:0.92rem;margin-bottom:3px">FNOSAD — OSAD / ASAD</h4><p style="font-size:0.8rem;color:#555;line-height:1.5">Fédération nationale des organismes sanitaires apicoles départementaux</p></div></div>
+      </div>
+    </div>
+    <div>
+      <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1rem;color:var(--violet)">🩺 Vétérinaires partenaires</h3>
+      <div class="card pc-v" style="box-shadow:none">
+        <div style="display:flex;gap:1rem;align-items:flex-start;margin-bottom:0.9rem"><span style="font-size:1.6rem">🩺</span><div><h4 style="font-size:0.92rem;margin-bottom:3px">GTV / SNGTV / FRGTV</h4><p style="font-size:0.8rem;color:#555;line-height:1.5">Co-signataires du PSA, vétérinaires PSE apicoles, relais techniques terrain</p></div></div>
+        <div style="display:flex;gap:1rem;align-items:flex-start"><span style="font-size:1.6rem">📋</span><div><h4 style="font-size:0.92rem;margin-bottom:3px">Vétérinaires PSE Régionaux</h4><p style="font-size:0.8rem;color:#555;line-height:1.5">Suivi sanitaire des élevages, interlocuteurs privilégiés des GDS sur le terrain</p></div></div>
+      </div>
+    </div>
+  </div>
+
+  <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:1.2rem;color:#b06010">🤝 Interprofession &amp; syndicats</h3>
+  <div class="grid-2" style="gap:1.2rem">
+    <div class="card" style="border-top:4px solid #b06010;background:#fffaf5"><div style="font-size:1.8rem;margin-bottom:0.7rem">🏭</div><h3 style="color:#b06010">InterApi</h3><p style="font-size:0.85rem;color:#555;line-height:1.6">Interprofession apicole française. Regroupe producteurs, transformateurs et conditionneurs.</p></div>
+    <div class="card" style="border-top:4px solid #8a6030;background:#fffaf5"><div style="font-size:1.8rem;margin-bottom:0.7rem">📢</div><h3 style="color:#8a6030">Syndicats apicoles</h3><p style="font-size:0.85rem;color:#555;line-height:1.6">UNAF, FFAP, syndicats régionaux et départementaux. Représentent les apiculteurs dans les instances de concertation.</p></div>
+  </div>
+</section>
+
+<!-- ═══════════════ PARTIE V — RESSOURCES -->
+<section id="ressources" style="background:#fff; padding: 5rem 6rem;">
+  <div class="section-tag tag-bleu">Partie V</div>
+  <h2 class="section-title blue">Ressources opérationnelles <em class="b">&amp; logistique</em></h2>
+  <div class="divider db"></div>
+  <p class="section-lead">Retrouvez ici les outils pratiques pour votre quotidien : lexique complet de la filière, systèmes d'information et procédures d'accès.</p>
+
+  <!-- LEXIQUE COMPLET -->
+  <h3 style="font-size:1.2rem;font-weight:700;margin-bottom:0.5rem;color:var(--violet)">📖 Lexique complet des acronymes</h3>
+
+  <div class="lex-section-title" style="background:var(--violet-light);color:var(--violet)">🏥 Organisations, Réseaux Sanitaires &amp; Groupements</div>
+  <div class="lex-grid">
+    <div class="lex-item"><strong>GDS</strong><span>Groupement de Défense Sanitaire</span></div>
+    <div class="lex-item"><strong>FRGDS</strong><span>Fédération Régionale des Groupements de Défense Sanitaire</span></div>
+    <div class="lex-item"><strong>GDSA</strong><span>Groupement de Défense Sanitaire Apicole</span></div>
+    <div class="lex-item"><strong>FNOSAD</strong><span>Fédération Nationale des Organisations Sanitaires Apicoles Départementaux</span></div>
+    <div class="lex-item"><strong>ADA</strong><span>Association de Développement de l'Apiculture</span></div>
+    <div class="lex-item"><strong>OSAD</strong><span>Organisme Sanitaire Apicole Départemental</span></div>
+    <div class="lex-item"><strong>ASAD</strong><span>Association Sanitaire Apicole Départementale</span></div>
+    <div class="lex-item"><strong>FRGTV</strong><span>Fédération Régionale des Groupements Techniques Vétérinaires</span></div>
+    <div class="lex-item"><strong>SNGTV</strong><span>Société Nationale des Groupements Techniques Vétérinaires</span></div>
+    <div class="lex-item"><strong>GTV</strong><span>Groupement Technique Vétérinaire</span></div>
+    <div class="lex-item"><strong>OVTT</strong><span>Organisations Vétérinaires à Vocation Technique</span></div>
+    <div class="lex-item"><strong>OVS</strong><span>Organisme à Vocation Sanitaire</span></div>
+    <div class="lex-item"><strong>CROPSAV</strong><span>Commission Régionale d'Orientation de la Politique Sanitaire Animale et Végétale</span></div>
+    <div class="lex-item"><strong>CNOPSAV</strong><span>Commission Nationale d'Orientation de la Politique Sanitaire Animale et Végétale</span></div>
+    <div class="lex-item"><strong>FDGDON</strong><span>Fédération Départementale des Groupements de Défense contre les Organismes Nuisibles</span></div>
+    <div class="lex-item"><strong>GDON</strong><span>Groupement de Défense contre les Organismes Nuisibles</span></div>
+    <div class="lex-item"><strong>FREDON</strong><span>Fédération Régionale de Défense contre les Organismes Nuisibles</span></div>
+    <div class="lex-item"><strong>ITSAP</strong><span>Institut Technique Scientifique de l'Apiculture et de la Pollinisation</span></div>
+    <div class="lex-item"><strong>GNTSA</strong><span>Groupement National des Techniciens Sanitaires Apicoles</span></div>
+    <div class="lex-item"><strong>TSA</strong><span>Technicien Sanitaire Apicole</span></div>
+  </div>
+
+  <div class="lex-section-title" style="background:var(--bleu-light);color:var(--bleu)">🏛️ Administrations &amp; Organismes officiels</div>
+  <div class="lex-grid">
+    <div class="lex-item lb"><strong>FEADER</strong><span>Fonds Européen Agricole pour le Développement Rural</span></div>
+    <div class="lex-item lb"><strong>PAC</strong><span>Politique Agricole Commune</span></div>
+    <div class="lex-item lb"><strong>DGAL</strong><span>Direction Générale de l'Alimentation</span></div>
+    <div class="lex-item lb"><strong>DRAAF</strong><span>Direction Régionale de l'Alimentation, de l'Agriculture et de la Forêt</span></div>
+    <div class="lex-item lb"><strong>DREAL</strong><span>Direction Régionale de l'Environnement, de l'Aménagement et du Logement</span></div>
+    <div class="lex-item lb"><strong>ANSES</strong><span>Agence Nationale de Sécurité Sanitaire de l'alimentation, de l'environnement et du travail</span></div>
+    <div class="lex-item lb"><strong>ARS</strong><span>Agence Régionale de Santé</span></div>
+    <div class="lex-item lb"><strong>INRAE</strong><span>Institut National de Recherche pour l'Agriculture, l'alimentation et l'Environnement</span></div>
+    <div class="lex-item lb"><strong>MNHN</strong><span>Muséum National d'Histoire Naturelle</span></div>
+    <div class="lex-item lb"><strong>GRETIA</strong><span>GRoupe d'ÉTude des Invertébrés Armoricains</span></div>
+    <div class="lex-item lb"><strong>CEN</strong><span>Conservatoire d'Espaces Naturels</span></div>
+    <div class="lex-item lb"><strong>CPIE</strong><span>Centre Permanent d'Initiatives Pour l'Environnement</span></div>
+    <div class="lex-item lb"><strong>OFB</strong><span>Office Français de la Biodiversité</span></div>
+    <div class="lex-item lb"><strong>FAM</strong><span>France AgriMer</span></div>
+    <div class="lex-item lb"><strong>MASA</strong><span>Ministère de l'Agriculture et de la Souveraineté Alimentaire</span></div>
+    <div class="lex-item lb"><strong>MTE</strong><span>Ministère de la Transition Écologique</span></div>
+  </div>
+
+  <div class="lex-section-title" style="background:var(--vert-light);color:#3a8020">🌿 Dispositifs &amp; Structures — Apiculture &amp; Agriculture</div>
+  <div class="lex-grid">
+    <div class="lex-item lg"><strong>FMSE</strong><span>Fonds national agricole de Mutualisation du risque Sanitaire et Environnemental</span></div>
+    <div class="lex-item lg"><strong>GIEE</strong><span>Groupement d'Intérêt Économique et Environnemental</span></div>
+    <div class="lex-item lg"><strong>COPIL</strong><span>COmité de PILotage</span></div>
+    <div class="lex-item lg"><strong>CA</strong><span>Conseil d'Administration</span></div>
+  </div>
+
+  <div class="lex-section-title" style="background:#fff3e8;color:#c06010">📋 Plans &amp; Programmes Sanitaires</div>
+  <div class="lex-grid">
+    <div class="lex-item lo"><strong>LSA</strong><span>Loi Santé Animale (règlement européen 2016/429)</span></div>
+    <div class="lex-item lo"><strong>PSIC</strong><span>Programmes Sanitaires d'Intérêts Collectifs</span></div>
+    <div class="lex-item lo"><strong>PISU</strong><span>Plan d'Interventions Sanitaires d'Urgence</span></div>
+    <div class="lex-item lo"><strong>PSA</strong><span>Plan Sanitaire Apicole (dans le cadre de la FRGDS)</span></div>
+    <div class="lex-item lo"><strong>PSN</strong><span>Plan Stratégique National</span></div>
+    <div class="lex-item lo"><strong>PSE</strong><span>Plan Sanitaire d'Elevage</span></div>
+    <div class="lex-item lo"><strong>OMAA</strong><span>Observatoire des Mortalités et des Affaiblissements de l'Abeille</span></div>
+  </div>
+
+  <div class="lex-section-title" style="background:#fde8f0;color:#b0205a">🐝 Santé &amp; Réglementation Apicole</div>
+  <div class="lex-grid">
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">NAPI</strong><span>Numéro d'Apiculteur</span></div>
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">AMM</strong><span>Autorisation de Mise sur le Marché</span></div>
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">MDO</strong><span>Maladie à Déclaration Obligatoire</span></div>
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">BPA</strong><span>Bonnes Pratiques Apicoles</span></div>
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">LA</strong><span>Loque Américaine</span></div>
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">LE</strong><span>Loque Européenne</span></div>
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">AT</strong><span>Aethina Tumida</span></div>
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">CBPV</strong><span>Chronic Bee Paralysis Virus</span></div>
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">DWV</strong><span>Deformed Wing Virus</span></div>
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">SBV</strong><span>SacBrood Virus</span></div>
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">ABPV</strong><span>Acute Bee Paralysis Virus</span></div>
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">IAPV</strong><span>Israeli Acute Paralysis Virus</span></div>
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">MMA</strong><span>Mortalité Massive d'Abeilles</span></div>
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">AO</strong><span>Acide Oxalique</span></div>
+    <div class="lex-item" style="border-left-color:#b0205a"><strong style="color:#b0205a">AF</strong><span>Acide Formique</span></div>
+  </div>
+
+  <!-- OUTILS -->
+  <h3 style="font-size:1.2rem;font-weight:700;margin-top:2.5rem;margin-bottom:1.2rem;color:var(--bleu)">💻 Outils &amp; Systèmes d'Information</h3>
+  <div class="tool-row"><div class="tool-icon">🗄️</div><div class="tool-info"><h4>Logiciel de gestion GDS</h4><p>Gestion des adhérents, suivi des visites, saisie des données sanitaires. Identifiants fournis par votre administrateur GDS.</p></div><div class="tool-badge" style="background:var(--violet-light);color:var(--violet)">Accès GDS</div></div>
+  <div class="tool-row"><div class="tool-icon">📊</div><div class="tool-info"><h4>Plateforme ESA</h4><p>Saisie et consultation des données épidémiosurveillance. Accès via portail national.</p></div><div class="tool-badge" style="background:var(--bleu-light);color:var(--bleu)">Portail national</div></div>
+  <div class="tool-row"><div class="tool-icon">🐝</div><div class="tool-info"><h4>Outils PSIC Varroa / OMAA</h4><p>Application de terrain pour le suivi des traitements, évaluation des niveaux d'infestation.</p></div><div class="tool-badge" style="background:var(--vert-light);color:#3a8020">Application terrain</div></div>
+  <div class="tool-row"><div class="tool-icon">📋</div><div class="tool-info"><h4>Espace collaboratif GDS France</h4><p>Partage de documents, comptes-rendus de commissions, ressources techniques. → <em style="color:var(--violet)">[lien intranet]</em></p></div><div class="tool-badge" style="background:#fff3e8;color:#b06010">Intranet</div></div>
+  <div class="tool-row"><div class="tool-icon">🗺️</div><div class="tool-info"><h4>Outils cartographiques</h4><p>Cartographie des foyers, visualisation territoriale, interface avec les DDPP.</p></div><div class="tool-badge" style="background:var(--violet-light);color:var(--violet)">Cartographie</div></div>
+
+  <div class="callout co-v" style="margin-top:1.5rem">
+    <div class="callout-icon">🔑</div>
+    <p><strong>Procédures d'accès</strong> Pour tout problème d'accès (identifiants, mots de passe, droits), contactez votre responsable direct ou l'administrateur système de votre GDS/FRGDS. Un guide de prise en main est disponible pour chaque outil sur l'intranet GDS France.</p>
+  </div>
+</section>
+
+<!-- ═══════════════ TROMBINOSCOPE -->
+<section class="alt" id="trombi" style="padding: 5rem 6rem;">
+  <div class="section-tag tag-violet">Trombinoscope</div>
+  <h2 class="section-title">Qui fait <em class="v">quoi ?</em></h2>
+  <div class="divider dv"></div>
+
+  <!-- GDS Pays de la Loire — Exemple de trombinoscope complet -->
+  <div class="trombi-section">
+    <div class="trombi-title">Organigramme Section Apicole <span>FRGDS Pays de la Loire</span></div>
+
+    <div class="gds-info-bar">
+      <div>
+        <div class="gds-name">GDS PDL</div>
+        <div class="gds-addr">30 Avenue de la Quantinière<br>49800 Trélazé</div>
+      </div>
+      <div class="contact-item">📞 <span>02.40.16.39.07</span></div>
+      <div class="contact-item">✉️ <span>gds44@reseaugds.com</span></div>
+    </div>
+
+    <!-- PRÉSIDENT -->
+    <div class="trombi-level">
+      <div class="trombi-level-label">Présidence</div>
+      <div class="trombi-row centered">
+        <div class="person-card role-president">
+          <div class="role-badge rb-v">★</div>
+          <div class="person-photo">
+            <div class="initials">RG</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Romain GAUTREAU</div>
+          <div class="person-role rv">Président</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trombi-sep"><span>Vice-présidence &amp; Staff</span></div>
+
+    <!-- VP + STAFF -->
+    <div class="trombi-level">
+      <div class="trombi-level-label">Direction &amp; Vice-Présidence</div>
+      <div class="trombi-row centered">
+        <div class="person-card role-staff">
+          <div class="role-badge rb-o">S</div>
+          <div class="person-photo">
+            <div class="initials">SP</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Sonia POUPELIN</div>
+          <div class="person-role" style="color:#d47020;font-weight:600">Contact Section</div>
+        </div>
+        <div class="person-card role-staff" style="border-color:#8a4010">
+          <div class="role-badge rb-o">D</div>
+          <div class="person-photo" style="background:linear-gradient(135deg,#8a4010,#c06020);border-color:#c06020">
+            <div class="initials">LD</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Laurent DELOBEL</div>
+          <div class="person-role" style="color:#8a4010;font-weight:600">Directeur GDS</div>
+        </div>
+        <div class="person-card role-vp">
+          <div class="role-badge rb-v">VP</div>
+          <div class="person-photo">
+            <div class="initials">DE</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Daniel EPINGARD</div>
+          <div class="person-role rv">Vice-Président</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trombi-sep"><span>Bureau — Membres titulaires</span></div>
+
+    <!-- BUREAU -->
+    <div class="trombi-level">
+      <div class="trombi-level-label">Bureau</div>
+      <div class="trombi-row centered">
+        <div class="person-card role-veto">
+          <div class="role-badge rb-t">V</div>
+          <div class="person-photo">
+            <div class="initials">CL</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Caroline LANTUEJOUL</div>
+          <div class="person-role" style="color:#1a7a6a;font-weight:600">Vétérinaire Conseil</div>
+        </div>
+        <div class="person-card role-bureau">
+          <div class="role-badge rb-b">T</div>
+          <div class="person-photo">
+            <div class="initials">FB</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Frédérique BABIN</div>
+          <div class="person-role rb">Trésorière</div>
+        </div>
+        <div class="person-card role-bureau">
+          <div class="role-badge rb-b">S</div>
+          <div class="person-photo">
+            <div class="initials">BG</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Benjamin GUILBAULT</div>
+          <div class="person-role rb">Secrétaire</div>
+        </div>
+        <div class="person-card role-membre">
+          <div class="role-badge rb-g">M</div>
+          <div class="person-photo">
+            <div class="initials">NR</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Nicolas ROUX</div>
+          <div class="person-role rg">Membre Titulaire</div>
+        </div>
+        <div class="person-card role-membre">
+          <div class="role-badge rb-g">M</div>
+          <div class="person-photo">
+            <div class="initials">BG</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Benoît GOURHAND</div>
+          <div class="person-role rg">Membre Titulaire</div>
+        </div>
+        <div class="person-card role-membre">
+          <div class="role-badge rb-g">M</div>
+          <div class="person-photo">
+            <div class="initials">GD</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Gilles DURAND</div>
+          <div class="person-role rg">Membre Titulaire</div>
+        </div>
+        <div class="person-card role-membre">
+          <div class="role-badge rb-g">M</div>
+          <div class="person-photo">
+            <div class="initials">PA</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Philippe AVERTY</div>
+          <div class="person-role rg">Membre Titulaire</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="trombi-sep"><span>Membres suppléants</span></div>
+
+    <!-- SUPPLÉANTS -->
+    <div class="trombi-level">
+      <div class="trombi-level-label">Membres suppléants</div>
+      <div class="trombi-row centered">
+        <div class="person-card role-suppleant">
+          <div class="role-badge rb-s">S</div>
+          <div class="person-photo">
+            <div class="initials">AF</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Alexis FERARD</div>
+          <div class="person-role">Membre suppléant</div>
+        </div>
+        <div class="person-card role-suppleant">
+          <div class="role-badge rb-s">S</div>
+          <div class="person-photo">
+            <div class="initials">LG</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Laurent GRÉGOIRE</div>
+          <div class="person-role">Membre suppléant</div>
+        </div>
+        <div class="person-card role-suppleant">
+          <div class="role-badge rb-s">S</div>
+          <div class="person-photo">
+            <div class="initials">JS</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Johanna SIMON</div>
+          <div class="person-role">Membre suppléante</div>
+        </div>
+        <div class="person-card role-suppleant">
+          <div class="role-badge rb-s">S</div>
+          <div class="person-photo">
+            <div class="initials">PC</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Philippe COSSARD</div>
+          <div class="person-role">Membre suppléant</div>
+        </div>
+        <div class="person-card role-suppleant">
+          <div class="role-badge rb-s">S</div>
+          <div class="person-photo">
+            <div class="initials">SP</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">Sylvain PORCHERON</div>
+          <div class="person-role">Membre suppléant</div>
+        </div>
+        <div class="person-card role-suppleant">
+          <div class="role-badge rb-s">S</div>
+          <div class="person-photo">
+            <div class="initials">RR</div>
+            <div class="photo-overlay">📷 Photo à venir</div>
+          </div>
+          <div class="person-name">René RICHARD</div>
+          <div class="person-role">Membre suppléant</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout co-v" style="margin-top:2rem">
+      <div class="callout-icon">📌</div>
+      <p><strong>Ajout des photos</strong> Pour ajouter les photos, remplacez les cercles de couleur par les portraits officiels de chaque membre. Un lien vers la version en ligne mise à jour sera disponible sur l'intranet GDS France → <em style="color:var(--violet)">[lien à insérer]</em></p>
+    </div>
+  </div>
+
+  <!-- MODÈLE GÉNÉRIQUE — Niveau National -->
+  <div class="trombi-section" style="margin-top:4rem">
+    <div class="trombi-title">Référents &amp; Élus régionaux <span>GDS France — Section Apicole Nationale</span></div>
+    <div class="callout co-b">
+      <div class="callout-icon">🔄</div>
+      <p><strong>Trombinoscope national mis à jour en ligne</strong> La liste complète avec photos, noms, fonctions et coordonnées de tous les référents apicoles régionaux et élus nationaux est disponible sur l'intranet GDS France → <em style="color:var(--bleu)">[lien à insérer]</em></p>
+    </div>
+    <div class="trombi-row centered" style="margin-top:1.5rem">
+      <div class="person-card role-president"><div class="role-badge rb-v">★</div><div class="person-photo"><div class="initials">?</div><div class="photo-overlay">À compléter</div></div><div class="person-name">Président Commission Apicole</div><div class="person-role rv">GDS France</div></div>
+      <div class="person-card role-bureau"><div class="role-badge rb-b">R</div><div class="person-photo"><div class="initials">?</div><div class="photo-overlay">À compléter</div></div><div class="person-name">Référent Apicole IDF</div><div class="person-role rb">Île-de-France</div></div>
+      <div class="person-card role-bureau"><div class="role-badge rb-b">R</div><div class="person-photo"><div class="initials">?</div><div class="photo-overlay">À compléter</div></div><div class="person-name">Référent Apicole ARA</div><div class="person-role rb">Auvergne-Rhône-Alpes</div></div>
+      <div class="person-card role-bureau"><div class="role-badge rb-b">R</div><div class="person-photo"><div class="initials">?</div><div class="photo-overlay">À compléter</div></div><div class="person-name">Référent Apicole NAQ</div><div class="person-role rb">Nouvelle-Aquitaine</div></div>
+      <div class="person-card role-bureau" style="opacity:0.6"><div class="role-badge rb-b">+</div><div class="person-photo"><div class="initials">…</div></div><div class="person-name">14 autres régions</div><div class="person-role rb">À compléter</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER -->
+<div class="accent-band"></div>
+<footer>
+  <div class="footer-logo">
+    <img src="data:image/png;base64,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" alt="GDS France">
+    <div class="footer-logo-text">
+      <div class="name"><span>GDS</span> France</div>
+      <div style="font-size:0.72rem;color:rgba(255,255,255,0.4);font-style:italic">L'action sanitaire ensemble</div>
+    </div>
+  </div>
+  <p>Section Apicole — Livret d'Accueil 2025<br>Document de référence interne</p>
+  <div class="footer-links">
+    <a href="#">🌐 gds-france.org</a>
+    <a href="#">📧 Contact</a>
+    <a href="#">📋 Intranet</a>
+  </div>
+</footer>
+
+</body>
+</html>
